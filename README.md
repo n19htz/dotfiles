@@ -22,12 +22,19 @@ to setup configuration files, or type:
 for bootstraping system.
 
 1. `system`: adjust system defaults for productivity (only available for Macs)
-1. `homebrew`: setup [Homebrew](homebrew) and install bundled packages
+1. `homebrew`: setup [Homebrew][homebrew] and install bundled packages
 1. `dotfiles`: setup dotfiles via `./dots install -a`
-1. `postfix`: setup [postfix](postfix) as GMail relay
-1. `tmux`: install [tmux](tmux) plugins
-1. `vim`: install [vim](vim) plugins
-1. `gterm`: gruvbox theme for [Gnome Terminal](gterm)
-1. `zsh`: setup [zsh](zsh) as login shell
-1. `vscode`: setup [vscode](vscode) configuation
+1. `postfix`: setup [postfix][postfix] as GMail relay
+1. `tmux`: install [tmux][tmux] plugins
+1. `vim`: install [vim][vim] plugins
+1. `gterm`: gruvbox theme for [Gnome Terminal][gterm]
+1. `zsh`: setup [zsh][zsh] as login shell
+1. `vscode`: setup [vscode][vscode] configuation
 
+[homebrew]: https://brew.sh
+[postfix]: http://www.postfix.org
+[tmux]: https://github.com/tmux/tmux
+[vim]: http://www.vim.org
+[zsh]: http://www.zsh.org
+[vscode]: https://code.visualstudio.com
+[gterm]: https://www.gnome.org
