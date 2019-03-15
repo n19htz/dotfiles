@@ -1,0 +1,25 @@
+[/]
+foreground-color='rgb(235,219,178)'
+highlight-background-color='rgb(235,219,178)'
+scrollbar-policy='never'
+highlight-foreground-color='rgb(39,39,39)'
+login-shell=false
+bold-is-bright=true
+palette=['rgb(39,39,39)', 'rgb(204,35,28)', 'rgb(152,151,25)', 'rgb(215,153,32)', 'rgb(68,132,136)', 'rgb(177,97,133)', 'rgb(104,157,105)', 'rgb(168,153,131)', 'rgb(146,131,115)', 'rgb(251,72,51)', 'rgb(184,186,37)', 'rgb(250,188,46)', 'rgb(131,165,151)', 'rgb(211,133,154)', 'rgb(142,192,123)', 'rgb(235,219,178)']
+custom-command='zsh'
+visible-name='n19htz'
+cursor-background-color='rgb(235,219,178)'
+use-system-font=true
+cursor-colors-set=true
+highlight-colors-set=true
+use-custom-command=false
+scrollback-lines=1000
+cursor-foreground-color='rgb(39,39,39)'
+use-transparent-background=false
+scrollback-unlimited=false
+bold-color-same-as-fg=false
+bold-color='rgb(254,255,255)'
+background-color='rgb(39,39,39)'
+background-transparency-percent=15
+cursor-blink-mode='on'
+audible-bell=false

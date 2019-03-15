@@ -1,0 +1,54 @@
+[alias]
+  prune = fetch --prune
+  cdiff = diff --cached
+  st = status --short
+  log1 = log --all --graph --decorate --oneline --abbrev-commit
+  glog = log --graph --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset'
+  merge-branch = merge --log --no-commit --no-ff
+  push-this = push origin HEAD
+  fix-submodules = submodule update --recursive --init
+  recursive = "!sh -c 'for i in . `git submodule foreach -q --recursive pwd`; do cd $i && git $@; done' -"
+  recursive-sh = "!sh -c 'for i in . `git submodule foreach -q --recursive pwd`; do cd $i && $@; done' -"
+
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+
+[branch]
+ sort = -committerdate
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[diff]
+  tool = icdiff
+
+[difftool]
+  prompt = false
+
+[difftool "icdiff"]
+  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+[merge]
+	tool = vimdiff
+
+[push]
+  followTags = true
+
+[rerere]
+	enabled = true
+
+[user]
+	name = Pavel Lapenkov 
+	email = 4n19htz@gmail.com

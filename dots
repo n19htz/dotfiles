@@ -1,0 +1,186 @@
+#!/bin/sh
+
+dir="$(cd "$(dirname "$0")" && pwd)"
+prefix="$HOME"
+
+usage() {
+  printf "usage: %s [options] <command> [arguments] <tag...>\n" $(basename $0)
+  echo
+  echo "options"
+  echo
+  echo "    -p <prefix>  prefix directory [$prefix]"
+  echo
+  echo "commands"
+  echo
+  echo "    diff         compare tag(s) with existing ones"
+  echo "    help         display this help"
+  echo "    install      symlink the given tag(s)"
+  echo "    uninstall    remove symlinks for the given tag(s)"
+  echo
+  echo "arguments"
+  echo
+  echo "    -a           apply command to all available tag(s)"
+  echo "    -f           force operation"
+  echo
+}
+
+log() {
+  red="\e[0;31m"
+  green="\e[0;32m"
+  yellow="\e[0;33m"
+  blue="\e[0;34m"
+  magenta="\e[0;35m"
+  cyan="\e[0;36m"
+  reset="\e[0;0m"
+  if [ "$1" = "red" ] || [ "$1" = "error" ]; then
+    color=$red
+  elif [ "$1" = "green" ]; then
+    color=$green
+  elif [ "$1" = "yellow" ]; then
+    color=$yellow
+  elif [ "$1" = "blue" ]; then
+    color=$blue
+  elif [ "$1" = "cyan" ] || [ "$1" = "info" ]; then
+    color=$cyan
+  elif [ "$1" = "magenta" ]; then
+    color=$magenta
+  else
+    color=$reset
+  fi
+  shift
+  printf "$color%s$reset\n" "$*"
+}
+
+list() {
+  git ls-files "$1" | awk -F / "$2" | uniq
+}
+
+execute() {
+  command=$1
+  tag=$2
+  if ! [ -d "$dir/$tag" ]; then
+    log error "no such tag: $tag"
+    exit 1
+  fi
+  if [ "$command" = "install" ]; then
+    if [ -n "$force" ]; then
+      ln="ln -sf"
+    else
+      ln="ln -s"
+    fi
+    log info "installing $tag into $prefix"
+    for entry in $(list "$tag" '{print $2}'); do
+      # If the target exists and is a directory, we keep it and install the
+      # files inside. Otherwise we simply create the symlink
+      if [ -d "$prefix/$entry" ]; then
+        if ! [ -d "$dir/$tag/$entry" ]; then
+          log error "source is a file but target a directory"
+          exit 1
+        fi
+        for file in $(list "$tag/$entry" '{print $2 "/" $3}'); do
+          eval "$ln \"$dir/$tag/$file\" \"$prefix/$entry\""
+          log info "  + $file"
+        done
+      else
+        eval "$ln \"$dir/$tag/$entry\" \"$prefix\""
+        log info "  + $entry"
+      fi
+    done
+  elif [ "$command" = "uninstall" ]; then
+    if [ -n "$force" ]; then
+      rm="rm -rf"
+    else
+      rm="rm"
+    fi
+    log info "uninstalling $tag from $prefix"
+    for entry in $(list "$tag" '{print $2}'); do
+      # Analoguous to install command: if we have a non-symlink directory, we
+      # look for installed symlinks inside to remove.
+      if [ -d "$prefix/$entry" ]; then
+        if ! [ -d "$dir/$tag/$entry" ]; then
+          log error "source is a file but target a directory"
+          exit 1
+        fi
+        for file in $(list "$tag/$entry" '{print $2 "/" $3}'); do
+          log info "  - $file"
+          eval "$rm \"$prefix/$file\""
+        done
+      elif [ -L "$prefix/$entry" ]; then
+        log info "  - $entry"
+        eval "$rm \"$prefix/$entry\""
+      fi
+    done
+  elif [ "$command" = "diff" ]; then
+    diff=diff
+    if which colordiff > /dev/null 2>&1; then
+      diff=colordiff
+    fi
+    for entry in $(list "$tag" '{print $2}'); do
+      $diff -ru "$dir/$tag/$entry" "$prefix/$entry" | grep -v '^Only in'
+    done
+  elif [ -z "$command" ]; then
+    log error "no command given"
+    exit 1
+  else
+    log error "unknown command: $command"
+    exit 1
+  fi
+}
+
+main() {
+  cd "$dir"
+  # Parse options.
+  while getopts "hp:" opt; do
+    case "$opt" in
+      h)
+        usage
+        exit 0
+        ;;
+      p)
+        prefix="$OPTARG"
+        ;;
+    esac
+  done
+  shift $(expr $OPTIND - 1)
+  if ! [ -d "$prefix" ]; then
+    log error "no such prefix: $prefix"
+    exit 1
+  fi
+  # Parse command.
+  command=$1
+  shift
+  if [ "$command" = "help" ]; then
+    usage
+    exit 0
+  fi
+  # Parse arguments.
+  OPTIND=1
+  while getopts "af" opt; do
+    case "$opt" in
+      a)
+        all=1
+        ;;
+      f)
+        force=1
+        ;;
+    esac
+  done
+  shift $(expr $OPTIND - 1)
+  if [ -n "$all" ]; then
+    cd $dir
+    set -- *
+    cd -
+  fi
+  if [ "${#@}" -eq 0 ]; then
+    log error "no tag(s) provided"
+    exit 1
+  fi
+  # Execute command on every tag.
+  for tag in "$@"; do
+    if ! [ -f "$dir/$tag" ]; then
+      execute "$command" "$tag"
+    fi
+  done
+}
+
+main "$@"
