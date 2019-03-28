@@ -591,23 +591,23 @@ update() {
 # =============================================================================
 
 # Load SSH and GPG agents via keychain.
-setup_agents() {
-  if [[ $UID -eq 0 ]]; then
-    return
-  fi
-  local -a ssh_keys gpg_keys
-  ssh_keys=(~/.ssh/**/*pub(.N:r))
-  gpg_keys=$(gpg -K --with-colons 2>/dev/null \
-               | awk -F : '$1 == "sec" { print $5 }')
-  if which keychain > /dev/null 2>&1; then
-    if (( $#ssh_keys > 0 )) || (( $#gpg_keys > 0 )); then
-      eval $(keychain -q --nogui --eval --host fix \
-        --agents ssh,gpg $ssh_keys ${(f)gpg_keys})
-    fi
-  fi
-}
-setup_agents
-unfunction setup_agents
+#setup_agents() {
+#  if [[ $UID -eq 0 ]]; then
+#    return
+#  fi
+#  local -a ssh_keys gpg_keys
+#  ssh_keys=(~/.ssh/**/*pub(.N:r))
+#  gpg_keys=$(gpg -K --with-colons 2>/dev/null \
+#               | awk -F : '$1 == "sec" { print $5 }')
+#  if which keychain > /dev/null 2>&1; then
+#    if (( $#ssh_keys > 0 )) || (( $#gpg_keys > 0 )); then
+#      eval $(keychain -q --nogui --eval --host fix \
+#        --agents ssh,gpg $ssh_keys ${(f)gpg_keys})
+#    fi
+#  fi
+#}
+#setup_agents
+#unfunction setup_agents
 
 # Source local customizations.
 if [[ -f ~/.zshrc.local ]]; then
@@ -617,3 +617,13 @@ fi
 if [[ -f ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh
 fi
+
+###-tns-completion-start-###
+if [ -f /Users/n19htz/.tnsrc ]; then 
+    source /Users/n19htz/.tnsrc 
+fi
+###-tns-completion-end-###
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/n19htz/.sdkman"
+[[ -s "/Users/n19htz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/n19htz/.sdkman/bin/sdkman-init.sh"
