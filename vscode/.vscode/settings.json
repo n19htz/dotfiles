@@ -108,5 +108,14 @@
   "terminal.integrated.macOptionClickForcesSelection": true,
   "emmet.showSuggestionsAsSnippets": true,
   "javascript.suggestionActions.enabled": false,
-  "workbench.colorTheme": "Gruvbox Dark (Medium)"
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  "emmet.showSuggestionsAsSnipperts": true,
+  "html-css-class-completion.enableEmmetSupport": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "razor": "html",
+    "plaintext": "jade"
+  }
 }
