@@ -109,7 +109,7 @@
   "emmet.showSuggestionsAsSnippets": true,
   "javascript.suggestionActions.enabled": false,
   "workbench.colorTheme": "Gruvbox Dark (Medium)",
-  "emmet.showSuggestionsAsSnipperts": true,
+  "emmet.showSuggestionsAsSnippets": true,
   "html-css-class-completion.enableEmmetSupport": true,
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
