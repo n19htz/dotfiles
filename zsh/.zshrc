@@ -366,21 +366,36 @@ alias apacherestart='sudo apachectl -k restart'
 
 #HTTPD
 alias findhttpd='ps -aef | grep httpd'
-alias httpdstart='sudo brew services start httpd'
-alias httpdstop='sudo brew services stop httpd'
-alias httpdrestart='sudo brew services restart httpd'
+alias httpdstart='brew services start httpd'
+alias httpdstop='brew services stop httpd'
+alias httpdrestart='brew services restart httpd'
 
 #MYSQL
-alias mysqlstart='mysql.server start'
-alias mysqlrestart='mysql.server restart'
-alias mysqlstop='mysql.server stop'
+alias mysqlstart='brew services start mariadb'
+alias mysqlrestart='brew services restart mariadb'
+alias mysqlstop='brew services stop mariadb'
+
+#PGSQL
+alias pgsqlstart='brew services start postgresql'
+alias pgsqlrestart='brew services restart postgresql'
+alias pgsqlstop='brew services stop postgresql'
+
+#REDIS
+alias redisstart='brew services start redis'
+alias redisrestart='brew services restart redis'
+alias redisstop='brew services stop redis'
+
+#CHUNKWM
+alias chunkwmstart='brew services start chunkwm'
+alias chunkwmrestart='brew services restart chunkwm'
+alias chunkwmstop='brew services stop chunkwm'
 
 # Web restart
-alias webstart='sudo apachectl start && sudo brew services start httpd && sphp 7.2  && sudo brew services start dnsmasq&& mysql.server start && sudo brew services start proftpd && sudo pftpd'
+alias webstart='brew services start httpd && sphp 7.2  && sudo brew services start dnsmasq && brew services start mariadb && brew services start proftpd && pftpd'
 
-alias webrestart='sudo apachectl restart && sudo brew services restart httpd && sphp 7.2  && sudo brew services restart dnsmasq&& mysql.server restart && sudo brew services restart proftpd && sudo pftpd'
+alias webrestart='brew services restart httpd && sphp 7.2 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd && sudu pftpd'
 
-alias webstop='sudo apachectl stop && sudo brew services stop httpd && sudo brew services stop dnsmasq&& mysql.server stop && sudo brew services stop proftpd'
+alias webstop='brew services stop httpd && sudo brew services stop dnsmasq && brew services stop mariadb && brew services stop proftpd'
 
 #make dir and navigate to it
 mkcd() { mkdir -p $1; cd $1 }

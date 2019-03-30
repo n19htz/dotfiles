@@ -51,4 +51,8 @@
 
 [user]
 	name = Pavel Lapenkov 
-	email = 4n19htz@gmail.com
+	email = n19ht3r@gmail.com
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
