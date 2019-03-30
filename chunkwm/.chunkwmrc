@@ -95,10 +95,15 @@ chunkc core::load ffm.so
 #
 
 chunkc tiling::rule --owner VLC --state float &
+chunkc tiling::rule --owner Telegram --state float &
+chunkc tiling::rule --owner Reeder --state float &
+chunkc tiling::rule --owner Tweetbot --state float &
 chunkc tiling::rule --owner Terminal --role AXWindow --subrole AXDialog --state tile &
 chunkc tiling::rule --owner Finder --name Copy --state float &
 chunkc tiling::rule --owner \"App Store\" --state float &
 chunkc tiling::rule --owner Mail --state float &
 chunkc tiling::rule --owner iTunes --desktop 3 --follow-desktop &
+chunkc tiling::rule --owner Safari --desktop 2 --follow-desktop &
+chunkc tiling::rule --owner \"Google Chrome\" --desktop 2 --follow-desktop &
 chunkc tiling::rule --owner Battle.net --desktop 3 --follow-desktop &
 chunkc tiling::rule --owner Discord --desktop 3 --follow-desktop &
