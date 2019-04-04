@@ -581,9 +581,9 @@ update() {
   fi  
   brew cleanup
   # Ruby
-  sudo gem update --system
-  sudo gem update
-  sudo gem cleanup
+  gem update --system
+  gem update
+  gem cleanup
   #nvm
   #cd $NVM_DIR 
   #git fetch -p
