@@ -50,9 +50,17 @@
 	enabled = true
 
 [user]
-	name = Pavel Lapenkov 
+	name = Pavel Lapenkov
 	email = n19ht3r@gmail.com
 [commit]
 	gpgsign = true
 [gpg]
 	program = gpg
+[core]
+	excludesfile = /Users/n19htz/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

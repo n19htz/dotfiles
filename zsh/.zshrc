@@ -298,7 +298,7 @@ alias git='hub'
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
-alias gc='git commit'
+alias gc='git commit -S -m '
 alias gd='git diff'
 alias gk='gitk --all&'
 alias gx='gitx --all'
@@ -393,7 +393,7 @@ alias chunkwmstop='brew services stop chunkwm'
 # Web restart
 alias webstart='brew services start httpd && sphp 7.2  && sudo brew services start dnsmasq && brew services start mariadb && brew services start proftpd && pftpd'
 
-alias webrestart='brew services restart httpd && sphp 7.2 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd && sudu pftpd'
+alias webrestart='brew services restart httpd && sphp 7.2 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd && sudo pftpd'
 
 alias webstop='brew services stop httpd && sudo brew services stop dnsmasq && brew services stop mariadb && brew services stop proftpd'
 

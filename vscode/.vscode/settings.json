@@ -111,11 +111,28 @@
   "workbench.colorTheme": "Gruvbox Dark (Medium)",
   "emmet.showSuggestionsAsSnippets": true,
   "html-css-class-completion.enableEmmetSupport": true,
-  "emmet.triggerExpansionOnTab": true,
+  "editor.wordBasedSuggestions": false,
+  "emmet.showExpandedAbbreviation": "always",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "vue-html": "html",
     "razor": "html",
-    "plaintext": "jade"
-  }
+    "plaintext": "jade",
+    "html": "html"
+  },
+  "eslint.autoFixOnSave": false,
+  "eslint.validate": [
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    }
+  ]
 }
