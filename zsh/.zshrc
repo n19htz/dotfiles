@@ -303,6 +303,8 @@ alias gd='git diff'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 
+alias cat='bat'
+
 alias vihosts="vim /usr/local/etc/httpd/extra/httpd-vhosts.conf"
 alias downloads="cd /Volumes/Data\ HD/Downloads"
 alias projects="cd /Volumes/Data\ HD/Projects"
@@ -581,7 +583,7 @@ update() {
   fi  
   brew cleanup
   # Ruby
-  gem update --system
+  sudo gem update --system
   gem update
   gem cleanup
   #nvm

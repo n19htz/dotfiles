@@ -3,33 +3,34 @@
     "xml",
     "php",
     "jinja",
+    "ejs",
     "javascriptreact",
     "typescriptreact",
     "markdown",
     "vue",
+    "jsx",
     "HTML (Eex)"
   ],
-  "cSpell.language": "en,en-GB,en-US,ru",
-  "cSpell.showStatus": false,
+  // "cSpell.language": "en,en-GB,en-US,ru",
+  // "cSpell.showStatus": false,
   "debug.allowBreakpointsEverywhere": true,
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
   "editor.colorDecorators": true,
   "editor.dragAndDrop": false,
-  "editor.folding": false,
   "editor.fontFamily": "Monaco",
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
   "editor.glyphMargin": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [
-    80
+    100
   ],
   "editor.scrollBeyondLastLine": false,
   "editor.snippetSuggestions": "none",
   "editor.tabCompletion": "on",
   "editor.wordWrap": "on",
-  "editor.wordWrapColumn": 80,
+  "editor.wordWrapColumn": 100,
   "emmet.triggerExpansionOnTab": true,
   "explorer.confirmDelete": false,
   "explorer.decorations.badges": false,
@@ -37,6 +38,7 @@
   "files.associations": {
     ".babelrc": "jsonc",
     ".eslintrc": "jsonc",
+    ".stylelintrc": "jsonc",
     "*.pyi": "python"
   },
   "files.autoSave": "onFocusChange",
@@ -108,8 +110,11 @@
   "terminal.integrated.macOptionClickForcesSelection": true,
   "emmet.showSuggestionsAsSnippets": true,
   "javascript.suggestionActions.enabled": false,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
+  // "tslint.enable": false,
+  // "tslint.jsEnable": false,
   "workbench.colorTheme": "Gruvbox Dark (Medium)",
-  "emmet.showSuggestionsAsSnippets": true,
   "html-css-class-completion.enableEmmetSupport": true,
   "editor.wordBasedSuggestions": false,
   "emmet.showExpandedAbbreviation": "always",
@@ -127,6 +132,10 @@
       "autoFix": true
     },
     {
+      "language": "javascriptreact",
+      "autoFix": true,
+    },
+    {
       "language": "html",
       "autoFix": true
     },
@@ -134,5 +143,16 @@
       "language": "javascript",
       "autoFix": true
     }
-  ]
+  ],
+  "gitlens.settings.mode": "advanced",
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "workbench.activityBar.visible": true,
+  "breadcrumbs.enabled": false,
+  "editor.tabSize": 2,
+  "editor.showFoldingControls": "mouseover",
+  "editor.folding": true,
+  "editor.foldingStrategy": "indentation",
+  "git.confirmSync": false,
+  "explorer.confirmDragAndDrop": false,
 }

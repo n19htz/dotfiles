@@ -63,6 +63,7 @@ esac
 
 # Set UTF-8 locale.
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Source local environment.
 if [[ -f ~/.zshenv.local ]]; then
