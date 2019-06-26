@@ -387,8 +387,10 @@ setup_vscode() {
     fi
     mkdir -p "$VSCODE_HOME/User"
 
-    ln -sf "~/.dotfiles/vscode/.vscode/settings.json" "$VSCODE_HOME/User/"
-    ln -sf "~/.dotfiles/vscode/.vscode/keybindings.json" "$VSCODE_HOME/User/"
+    ln -sf "~/.dotfiles/vscode/.vscode/settings.json"
+    "$VSCODE_HOME/User/settings.json"
+    ln -sf "~/.dotfiles/vscode/.vscode/keybindings.json"
+    "$VSCODE_HOME/User/keybindings.json"
 
     modules="
       adamwalzer.scss-lint
