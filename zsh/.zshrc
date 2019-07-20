@@ -584,8 +584,8 @@ update() {
   brew cleanup
   # Ruby
   sudo gem update --system
-  gem update
-  gem cleanup
+  sudo gem update
+  sudo gem cleanup
   #nvm
   #cd $NVM_DIR 
   #git fetch -p

@@ -155,4 +155,13 @@
   "editor.foldingStrategy": "indentation",
   "git.confirmSync": false,
   "explorer.confirmDragAndDrop": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "eslint.alwaysShowStatus": true,
+  "clock.dateFormat": "mmm dS yyyy, HH:MM",
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "jest.pathToConfig": "jest.config.json",
+  "typescript.suggest.autoImports": false,
+  "javascript.suggest.autoImports": false,
+  "material-icon-theme.activeIconPack": "react_redux",
+  "material-icon-theme.showWelcomeMessage": false
 }
