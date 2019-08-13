@@ -18,14 +18,11 @@
   "editor.codeLens": true,
   "editor.colorDecorators": true,
   "editor.dragAndDrop": false,
-  "editor.fontFamily": "Monaco",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 16,
   "editor.glyphMargin": true,
   "editor.minimap.enabled": false,
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "editor.scrollBeyondLastLine": false,
   "editor.snippetSuggestions": "none",
   "editor.tabCompletion": "on",
@@ -35,11 +32,14 @@
   "explorer.confirmDelete": false,
   "explorer.decorations.badges": false,
   "extensions.ignoreRecommendations": true,
+  "explorer.sortOrder": "type",
   "files.associations": {
     ".babelrc": "jsonc",
     ".eslintrc": "jsonc",
     ".stylelintrc": "jsonc",
-    "*.pyi": "python"
+    "*.pyi": "python",
+    "*.html": "html",
+    "*.styl": "stylus"
   },
   "files.autoSave": "onFocusChange",
   "files.exclude": {
@@ -96,6 +96,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.statusBar.feedback.visible": false,
   "workbench.tips.enabled": false,
+  "workbench.editor.highlightModifiedTabs": true,
   "python.linting.enabled": true,
   "git.showInlineOpenFileAction": false,
   "terminal.external.osxExec": "iTerm.app",
@@ -133,7 +134,7 @@
     },
     {
       "language": "javascriptreact",
-      "autoFix": true,
+      "autoFix": true
     },
     {
       "language": "html",
@@ -162,6 +163,36 @@
   "jest.pathToConfig": "jest.config.json",
   "typescript.suggest.autoImports": false,
   "javascript.suggest.autoImports": false,
-  "material-icon-theme.activeIconPack": "react_redux",
-  "material-icon-theme.showWelcomeMessage": false
+  "material-icon-theme.activeIconPack": "none",
+  "material-icon-theme.showWelcomeMessage": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Fira Code",
+  "files.trimFinalNewlines": true,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.eslintIntegration": true,
+  "prettier.singleQuote": true,
+  "prettier.stylelintIntegration": true,
+  "prettier.trailingComma": "all",
+  "prettier.tslintIntegration": true,
+  "prettier.cssEnable": [
+    "css",
+    "less",
+    "sass"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "html2pug": {
+    "tabs": false, // !editor.options.insertSpaces
+    "fragment": false,
+    "doubleQuotes": true,
+    "commas": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
