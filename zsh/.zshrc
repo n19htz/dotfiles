@@ -1,7 +1,7 @@
 # =============================================================================
 #                          Pre-Plugin Configuration
 # =============================================================================
-
+#
 # Automagically quote URLs. This obviates the need to quote them manually when
 # pasting or typing URLs.
 autoload -Uz url-quote-magic
@@ -394,9 +394,9 @@ alias chunkwmrestart='brew services restart chunkwm'
 alias chunkwmstop='brew services stop chunkwm'
 
 # Web restart
-alias webstart='brew services start httpd && sphp 7.2  && sudo brew services start dnsmasq && brew services start mariadb && brew services start proftpd && pftpd'
+alias webstart='brew services start httpd && sphp 7.3  && sudo brew services start dnsmasq && brew services start mariadb && brew services start proftpd && pftpd'
 
-alias webrestart='brew services restart httpd && sphp 7.2 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd && sudo pftpd'
+alias webrestart='brew services restart httpd && sphp 7.3 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd && sudo pftpd'
 
 alias webstop='brew services stop httpd && sudo brew services stop dnsmasq && brew services stop mariadb && brew services stop proftpd'
 
@@ -594,7 +594,7 @@ update() {
   #source $NVM_DIR/nvm.sh
   #cd $OLDPWD
   #nvm install lts/carbon --reinstall-packages=lts/carbon
-  #nvm install node --reinstall-packages-from=node 
+  nvm install 'lts/*' --reinstall-packages-from='lts/*' 
   #nvm use node
   # npm
   npm install npm -g
@@ -645,3 +645,4 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/n19htz/.sdkman"
 [[ -s "/Users/n19htz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/n19htz/.sdkman/bin/sdkman-init.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
