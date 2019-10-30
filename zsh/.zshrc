@@ -594,7 +594,7 @@ update() {
   #source $NVM_DIR/nvm.sh
   #cd $OLDPWD
   #nvm install lts/carbon --reinstall-packages=lts/carbon
-  nvm install 'lts/*' --reinstall-packages-from='lts/*' 
+  nvm install 'lts/*' --latest-npm --reinstall-packages-from='lts/*' 
   #nvm use node
   # npm
   npm install npm -g

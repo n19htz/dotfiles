@@ -17,7 +17,15 @@
   "material-icon-theme.showWelcomeMessage": false,
   "material-icon-theme.files.associations": {
     "firebase.utils.js": "firebase",
-    "firebase.js": "firebase"
+    "firebase.js": "firebase",
+    "*.selectors.js": "Redux-store",
+    "*.sagas.js": "Redux-store",
+    "*.saga.js": "Redux-store"
+  },
+  "material-icon-theme.folders.associations": {
+    "selectors": "redux-store",
+    "router": "routes",
+    "sagas": "Redux-store"
   },
   // editor
   "editor.accessibilitySupport": "off",
@@ -42,6 +50,7 @@
           "keyword", //import, export, return…
           // "constant", //String, Number, Boolean…, this, super
           "storage.modifier", //static keyword
+          "storage.type",
           "constant.language",
           "entity.other.attribute-name",
           "variable.language",
@@ -193,10 +202,12 @@
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.showExpandedAbbreviation": "always",
   "emmet.includeLanguages": {
+    "edge": "html",
     "javascript": "javascriptreact",
     "vue-html": "html",
     "razor": "html",
     "plaintext": "jade",
+    "vue": "html",
     "html": "html"
   },
   // eslint
@@ -221,7 +232,7 @@
     },
   ],
   // breadcrumbs
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   // clock
   "clock.dateFormat": "mmm dS yyyy, HH:MM",
   // html2pug
