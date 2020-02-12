@@ -324,9 +324,9 @@ let g:tmuxline_preset = {
 
 " -- colors ------------------------------------------------------------------
 
-if has("termguicolors")
-  set termguicolors
-endif
+"if has("termguicolors")
+"  set termguicolors
+"endif
 colorscheme gruvbox
 "colorscheme codedark
 "colorscheme monokai

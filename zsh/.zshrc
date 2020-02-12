@@ -394,9 +394,9 @@ alias chunkwmrestart='brew services restart chunkwm'
 alias chunkwmstop='brew services stop chunkwm'
 
 # Web restart
-alias webstart='brew services start httpd && sphp 7.3  && sudo brew services start dnsmasq && brew services start mariadb && brew services start proftpd && pftpd'
+alias webstart='brew services start httpd && sphp 7.4  && sudo brew services start dnsmasq && brew services start mariadb && brew services start proftpd'
 
-alias webrestart='brew services restart httpd && sphp 7.3 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd && sudo pftpd'
+alias webrestart='brew services restart httpd && sphp 7.4 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd'
 
 alias webstop='brew services stop httpd && sudo brew services stop dnsmasq && brew services stop mariadb && brew services stop proftpd'
 
@@ -593,9 +593,11 @@ update() {
   #git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
   #source $NVM_DIR/nvm.sh
   #cd $OLDPWD
-  #nvm install lts/carbon --reinstall-packages=lts/carbon
-  nvm install 'lts/*' --latest-npm --reinstall-packages-from='lts/*' 
-  #nvm use node
+  nvm install 'lts/carbon' --reinstall-packages-from='lts/carbon'
+  nvm install 'lts/dubnium' --reinstall-packages-from='lts/dubnium'
+  nvm install 'lts/*' --reinstall-packages-from='lts/*'
+  nvm install node --latest-npm --reinstall-packages-from=node 
+  #nvm use default
   # npm
   npm install npm -g
   npm update -g

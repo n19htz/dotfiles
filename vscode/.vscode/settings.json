@@ -20,14 +20,28 @@
     "firebase.js": "firebase",
     "*.selectors.js": "Redux-store",
     "*.sagas.js": "Redux-store",
-    "*.saga.js": "Redux-store"
+    "*.saga.js": "Redux-store",
+    "http.js": "http",
+    "api.js": "http"
   },
   "material-icon-theme.folders.associations": {
     "selectors": "redux-store",
     "router": "routes",
-    "sagas": "Redux-store"
+    "sagas": "Redux-store",
+    "use-checker": "hook",
+    "use-query": "hook",
+    "use-sidebar": "hook",
+    "use-toasts": "hook",
+    "use-validation": "hook",
+    "use-modal": "hook",
+    "private-route": "private",
+    "public-route": "public",
+    "filters": "review"
   },
   // editor
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
   "editor.colorDecorators": true,
@@ -245,12 +259,7 @@
   // debug
   "debug.allowBreakpointsEverywhere": true,
   "stylelint.enable": true,
-  // prettier
-  "prettier.printWidth": 100,
-  "prettier.stylelintIntegration": true,
-  "prettier.trailingComma": "all",
   "prettier.disableLanguages": [],
-  "prettier.singleQuote": true,
   "prettier.cssEnable": [
     "css",
     "less",
