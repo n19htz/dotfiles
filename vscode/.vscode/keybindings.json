@@ -1,5 +1,9 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+   { "key": "cmd+n",  "command": "explorer.newFile",
+                      "when": "!editorFocus"  },
+  { "key": "cmd+shift+n",  "command": "explorer.newFolder",
+                            "when": "!editorFocus"  },
     {
         "key": "tab",
         "command": "editor.emmet.action.expandAbbreviation",

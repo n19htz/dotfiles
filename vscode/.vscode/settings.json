@@ -1,4 +1,5 @@
 {
+  // autoclose-tag
   "auto-close-tag.activationOnLanguage": [
     "xml",
     "php",
@@ -11,38 +12,117 @@
     "jsx",
     "HTML (Eex)"
   ],
-  // "cSpell.language": "en,en-GB,en-US,ru",
-  // "cSpell.showStatus": false,
-  "debug.allowBreakpointsEverywhere": true,
+  // material-icon
+  "material-icon-theme.activeIconPack": "react_redux",
+  "material-icon-theme.showWelcomeMessage": false,
+  "material-icon-theme.files.associations": {
+    "firebase.utils.js": "firebase",
+    "firebase.js": "firebase",
+    "*.selectors.js": "Redux-store",
+    "*.sagas.js": "Redux-store",
+    "*.saga.js": "Redux-store",
+    "*.hook.js": "React_ts",
+    "http.js": "http"
+  },
+  "material-icon-theme.folders.associations": {
+    "selectors": "redux-store",
+    "router": "routes",
+    "sagas": "Redux-store",
+    "error-boundary": "Error",
+    "use-validation": "hook",
+    "use-modal": "hook",
+    "use-query": "hook",
+    "use-toast": "hook",
+    "use-toasts": "hook",
+    "use-sidebar": "hook",
+    "use-checker": "hook",
+    "private-route": "private",
+    "public-route": "public",
+    "filters": "review",
+  },
+  // editor
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
   "editor.colorDecorators": true,
   "editor.dragAndDrop": false,
-  "editor.fontFamily": "Monaco",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 16,
   "editor.glyphMargin": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [
     100
   ],
   "editor.scrollBeyondLastLine": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic (=FlottFlott)
+          "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          // "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type",
+          "constant.language",
+          "entity.other.attribute-name",
+          "variable.language",
+        ],
+        "settings": {
+          "fontStyle": "italic",
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json",
+          "variable.other"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
   "editor.snippetSuggestions": "none",
   "editor.tabCompletion": "on",
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 100,
-  "emmet.triggerExpansionOnTab": true,
+  "editor.tabSize": 2,
+  "editor.showFoldingControls": "mouseover",
+  "editor.folding": true,
+  "editor.foldingStrategy": "indentation",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Operator Mono Lig, Fira Code",
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "editor.suggestSelection": "first",
+  "editor.wordBasedSuggestions": false,
+  // explorer
   "explorer.confirmDelete": false,
   "explorer.decorations.badges": false,
+  "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
+  "explorer.sortOrder": "type",
+  // files
   "files.associations": {
     ".babelrc": "jsonc",
     ".eslintrc": "jsonc",
     ".stylelintrc": "jsonc",
-    "*.pyi": "python"
+    "*.pyi": "python",
+    "*.html": "html",
+    "*.styl": "stylus"
   },
+  "files.trimFinalNewlines": true,
   "files.autoSave": "onFocusChange",
   "files.exclude": {
+    "**/.vscode": true,
     "**/.DS_Store": true,
     "**/__pycache__": true,
     "**/.cache": true,
@@ -53,20 +133,33 @@
     "**/.coverage": true,
     "**/*.py[co]": true
   },
+  // git
   "git.autofetch": false,
+  "git.showInlineOpenFileAction": false,
+  "git.confirmSync": false,
+  // python
+  "python.linting.enabled": true,
+  "python.jediEnabled": false,
   "python.formatting.provider": "none",
   "python.pythonPath": "${workspaceFolder}/venv/bin/python3",
   "python.terminal.activateEnvironment": true,
   "python.workspaceSymbols.enabled": true,
+  // telemetry
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.integrated.enableBell": false,
+  // vetur
   "vetur.validation.script": false,
   "vetur.validation.style": false,
   "vetur.validation.template": false,
+  "vetur.format.defaultFormatter.js": "prettier",
+  "vetur.format.enable": false,
+  // window
   "window.clickThroughInactive": false,
   "window.newWindowDimensions": "maximized",
   "window.zoomLevel": 0,
+  // workbench / terminal styles
+  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "gitDecoration.modifiedResourceForeground": "#d4cb68",
     "terminal.background": "#272727",
@@ -94,38 +187,45 @@
   "workbench.editor.labelFormat": "short",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.statusBar.feedback.visible": false,
   "workbench.tips.enabled": false,
-  "python.linting.enabled": true,
-  "git.showInlineOpenFileAction": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  // terminal
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontFamily": "MesloLGSDZ Nerd Font",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
   "terminal.integrated.fontSize": 14,
   "terminal.external.linuxExec": "gnome terminal",
-  "python.jediEnabled": false,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "terminal.integrated.fontWeight": "500",
   "terminal.integrated.macOptionClickForcesSelection": true,
-  "emmet.showSuggestionsAsSnippets": true,
+  // interllisense
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // javascript
   "javascript.suggestionActions.enabled": false,
   "javascript.validate.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "javascript.suggest.autoImports": false,
+  // typescript
   "typescript.validate.enable": false,
-  // "tslint.enable": false,
-  // "tslint.jsEnable": false,
-  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  "typescript.suggest.autoImports": false,
+  // html
   "html-css-class-completion.enableEmmetSupport": true,
-  "editor.wordBasedSuggestions": false,
+  // emmet
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
   "emmet.showExpandedAbbreviation": "always",
   "emmet.includeLanguages": {
+    "edge": "html",
     "javascript": "javascriptreact",
     "vue-html": "html",
     "razor": "html",
     "plaintext": "jade",
+    "vue": "html",
     "html": "html"
   },
-  "eslint.autoFixOnSave": false,
+  // eslint
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
   "eslint.validate": [
     {
       "language": "vue",
@@ -133,7 +233,7 @@
     },
     {
       "language": "javascriptreact",
-      "autoFix": true,
+      "autoFix": true
     },
     {
       "language": "html",
@@ -142,26 +242,88 @@
     {
       "language": "javascript",
       "autoFix": true
-    }
+    },
   ],
-  "gitlens.settings.mode": "advanced",
-  "editor.renderWhitespace": "all",
-  "editor.renderControlCharacters": true,
-  "workbench.activityBar.visible": true,
-  "breadcrumbs.enabled": false,
-  "editor.tabSize": 2,
-  "editor.showFoldingControls": "mouseover",
-  "editor.folding": true,
-  "editor.foldingStrategy": "indentation",
-  "git.confirmSync": false,
-  "explorer.confirmDragAndDrop": false,
-  "vsicons.dontShowNewVersionMessage": true,
-  "eslint.alwaysShowStatus": true,
+  // breadcrumbs
+  "breadcrumbs.enabled": true,
+  // clock
   "clock.dateFormat": "mmm dS yyyy, HH:MM",
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "jest.pathToConfig": "jest.config.json",
-  "typescript.suggest.autoImports": false,
-  "javascript.suggest.autoImports": false,
-  "material-icon-theme.activeIconPack": "react_redux",
-  "material-icon-theme.showWelcomeMessage": false
+  // html2pug
+  "html2pug": {
+    "tabs": false, // !editor.options.insertSpaces
+    "fragment": false,
+    "doubleQuotes": true,
+    "commas": true
+  },
+  // debug
+  "debug.allowBreakpointsEverywhere": true,
+  "stylelint.enable": true,
+  // prettier
+  "prettier.printWidth": 100,
+  "prettier.trailingComma": "all",
+  "prettier.disableLanguages": [],
+  "prettier.singleQuote": true,
+  "prettier.cssEnable": [
+    "css",
+    "less",
+    "sass",
+    "scss",
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[django-html]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[git-commit]": {
+    "editor.rulers": [
+      100
+    ],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[makefile]": {
+    "editor.insertSpaces": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.autoIndent": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "todo-tree.tree.showScanModeButton": false
 }
