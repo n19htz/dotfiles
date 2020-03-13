@@ -1,7 +1,6 @@
 # =============================================================================
 #                          Pre-Plugin Configuration
 # =============================================================================
-
 # Automagically quote URLs. This obviates the need to quote them manually when
 # pasting or typing URLs.
 autoload -Uz url-quote-magic
@@ -9,7 +8,6 @@ zle -N self-insert url-quote-magic
 # =============================================================================
 #                                   Plugins
 # =============================================================================
-
 # powerlevel9k prompt theme
 DEFAULT_USER=$USER
 POWERLEVEL9K_MODE='nerdfont-complete'
