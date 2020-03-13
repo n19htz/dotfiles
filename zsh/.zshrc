@@ -6,7 +6,6 @@
 # pasting or typing URLs.
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
-. /usr/local/etc/profile.d/z.sh
 # =============================================================================
 #                                   Plugins
 # =============================================================================
@@ -304,11 +303,8 @@ alias gd='git diff'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 
-alias cat='bat'
-
-alias vihosts="vim /usr/local/etc/httpd/extra/httpd-vhosts.conf"
-alias downloads="cd /Volumes/Data\ HD/Downloads"
-alias projects="cd /Volumes/Data\ HD/Projects"
+alias downloads="cd ~/Downloads"
+alias projects="cd ~/Projects"
 
 ## a quick way to get out of current directory ##
 alias cd/='cd /'
@@ -360,64 +356,12 @@ alias meminfo='free -m -l -t'
 
 alias reload='source ~/.zshrc'
 alias zshrc='vim ~/.zshrc'
-alias mtr='sudo mtr'
-
-#Apache
-alias apachestart='sudo apachectl start'
-alias apachestop='sudo apachectl stop'
-alias apacherestart='sudo apachectl -k restart'
 
 #HTTPD
 alias findhttpd='ps -aef | grep httpd'
-alias httpdstart='brew services start httpd'
-alias httpdstop='brew services stop httpd'
-alias httpdrestart='brew services restart httpd'
-
-#MYSQL
-alias mysqlstart='brew services start mariadb'
-alias mysqlrestart='brew services restart mariadb'
-alias mysqlstop='brew services stop mariadb'
-
-#PGSQL
-alias pgsqlstart='brew services start postgresql'
-alias pgsqlrestart='brew services restart postgresql'
-alias pgsqlstop='brew services stop postgresql'
-
-#REDIS
-alias redisstart='brew services start redis'
-alias redisrestart='brew services restart redis'
-alias redisstop='brew services stop redis'
-
-#CHUNKWM
-alias chunkwmstart='brew services start chunkwm'
-alias chunkwmrestart='brew services restart chunkwm'
-alias chunkwmstop='brew services stop chunkwm'
-
-# Web restart
-alias webstart='brew services start httpd && sphp 7.2  && sudo brew services start dnsmasq && brew services start mariadb && brew services start proftpd && pftpd'
-
-alias webrestart='brew services restart httpd && sphp 7.2 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd && sudo pftpd'
-
-alias webstop='brew services stop httpd && sudo brew services stop dnsmasq && brew services stop mariadb && brew services stop proftpd'
 
 #make dir and navigate to it
 mkcd() { mkdir -p $1; cd $1 }
-
-#vagrant
-function homestead() {
-    ( cd /Volumes/Data\ HD/Virtual\ Machines/Homestead && vagrant $* )
-}
-function kali() {
-    ( cd /Volumes/Data\ HD/Virtual\ Machines/vagrant/boxes/offensive-security-VAGRANTSLASH-kali-linux/2018.3.1/virtualbox && vagrant $* )
-}
-
-function gulpinit() {
-    ( wget https://github.com/n19htz/gulp4/archive/master.zip && extract master.zip && mv gulp4-master/bootstrap.sh . && rm -rf master.zip gulp4-master && chmod +x bootstrap.sh && ./bootstrap.sh && rm -rf bootstrap.sh .DS_Store )
-}
-
-function webpackinit() {
-    ( wget https://github.com/n19htz/webpack/archive/master.zip && extract master.zip && mv webpack-master/* . && rm -rf master.zip webpack-master )
-}
 
 # create .tar.gz
 targz() { tar -zcvf $1.tar.gz $1; rm -r $1; }
@@ -567,39 +511,14 @@ update() {
       kill -0 "$$" || exit
     done 2>/dev/null &
   fi
-  if [[ $OSTYPE = linux* ]]; then
-    sudo apt-get update
-    sudo apt-get -y upgrade
-    sudo apt-get clean
-    sudo apt -y autoremove
-  elif [[ $OSTYPE = darwin* ]]; then
+  if [[ $OSTYPE = darwin* ]]; then
     # System
     sudo softwareupdate -i -a
   fi
   # Homebrew
   brew update	
   brew upgrade
-  if [[ $OSTYPE = darwin* ]]; then
-    brew cu 
-  fi  
   brew cleanup
-  # Ruby
-  sudo gem update --system
-  sudo gem update
-  sudo gem cleanup
-  #nvm
-  #cd $NVM_DIR 
-  #git fetch -p
-  #git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
-  #source $NVM_DIR/nvm.sh
-  #cd $OLDPWD
-  #nvm install lts/carbon --reinstall-packages=lts/carbon
-  #nvm install node --reinstall-packages-from=node 
-  #nvm use node
-  # npm
-  # npm install npm -g
-  # npm update -g
-  # Shell plugin management
   zplug update
   vim +PlugUpgrade +PlugUpdate +PlugCLean! +qa
 }
@@ -642,6 +561,10 @@ if [ -f /Users/n19htz/.tnsrc ]; then
 fi
 ###-tns-completion-end-###
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/n19htz/.sdkman"
-[[ -s "/Users/n19htz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/n19htz/.sdkman/bin/sdkman-init.sh"
+# Setup GPG.
+export GPG_TTY=$(tty);
+if which gpgconf > /dev/null 2>&1; then
+  export GPG_AGENT_INFO=$(gpgconf --list-dirs agent-socket)
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+  gpg-connect-agent updatestartuptty /bye > /dev/null
+fi

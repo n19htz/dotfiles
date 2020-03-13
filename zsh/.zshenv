@@ -19,9 +19,6 @@ elif which vi &> /dev/null; then
 fi
 export VISUAL=$EDITOR
 
-#Vagrant home
-export VAGRANT_HOME=/Volumes/Data\ HD/Virtual\ Machines/vagrant
-
 # Pager.
 export PAGER="less -S"
 
@@ -35,13 +32,6 @@ export CVS_RSH="ssh"
 export CVSEDITOR="vim"
 export RSYNC_RSH="ssh"
 
-# Setup GPG.
-export GPG_TTY=$(tty);
-if which gpgconf > /dev/null 2>&1; then
-  export GPG_AGENT_INFO=$(gpgconf --list-dirs agent-socket)
-  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-  gpg-connect-agent updatestartuptty /bye > /dev/null
-fi
 
 # OS-specific environment.
 case $OSTYPE in
