@@ -170,7 +170,6 @@ if zplug check 'zsh-users/zsh-autosuggestions'; then
   # See https://github.com/zsh-users/zsh-autosuggestions/issues/182.
   ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=gray'
 fi
-
 # Our custom version of oh-my-zsh's globalias plugin. Unlike the OMZ version,
 # we do not use the `expand-word' widget and only expand a few whitelisted
 # aliases.
