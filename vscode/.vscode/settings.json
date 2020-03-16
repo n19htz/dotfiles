@@ -104,7 +104,7 @@
   "editor.foldingStrategy": "indentation",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.fontFamily": "Operator Mono Lig, Fira Code",
+  "editor.fontFamily": "Operator Mono Lig, FiraCode Nerd Font",
   "editor.renderWhitespace": "all",
   "editor.renderControlCharacters": true,
   "editor.suggestSelection": "first",
