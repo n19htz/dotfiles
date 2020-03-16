@@ -587,15 +587,17 @@ update() {
   sudo gem update --system
   sudo gem update
   sudo gem cleanup
+  # Java
+  sdk update
   #nvm
   #cd $NVM_DIR 
   #git fetch -p
   #git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
   #source $NVM_DIR/nvm.sh
   #cd $OLDPWD
-  nvm install 'lts/carbon' --reinstall-packages-from='lts/carbon'
-  nvm install 'lts/dubnium' --reinstall-packages-from='lts/dubnium'
-  nvm install 'lts/*' --reinstall-packages-from='lts/*'
+  nvm install 'lts/carbon'
+  nvm install 'lts/dubnium'
+  nvm install 'lts/*'
   nvm install node --latest-npm --reinstall-packages-from=node 
   #nvm use default
   # npm

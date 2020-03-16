@@ -22,7 +22,8 @@
     "*.sagas.js": "Redux-store",
     "*.saga.js": "Redux-store",
     "http.js": "http",
-    "api.js": "http"
+    "api.js": "http",
+    "*.hook.js": "velocity"
   },
   "material-icon-theme.folders.associations": {
     "selectors": "redux-store",
@@ -34,13 +35,16 @@
     "use-toasts": "hook",
     "use-validation": "hook",
     "use-modal": "hook",
+    "use-trash": "hook",
+    "use-form-handlers": "hook",
     "private-route": "private",
     "public-route": "public",
     "filters": "review"
   },
   // editor
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
   },
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
@@ -123,7 +127,7 @@
   "files.trimFinalNewlines": true,
   "files.autoSave": "onFocusChange",
   "files.exclude": {
-    "**/.vscode": true,
+    "**/.vscode": false,
     "**/.DS_Store": true,
     "**/__pycache__": true,
     "**/.cache": true,
@@ -258,7 +262,6 @@
   },
   // debug
   "debug.allowBreakpointsEverywhere": true,
-  "stylelint.enable": true,
   "prettier.disableLanguages": [],
   "prettier.cssEnable": [
     "css",
@@ -318,5 +321,9 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 100,
+  "editor.minimap.maxColumn": 100,
+  "todo-tree.tree.showScanModeButton": false
 }

@@ -380,7 +380,7 @@ setup_gterm() {
 setup_vscode() {
   log "setting VSCode"
   if command -v code >/dev/null; then
-    if [ $(uname -s) = "Darwin"  ]; then
+    if [ $(uname -s) = "Darwin" ]; then
       VSCODE_HOME="$HOME/Library/Application Support/Code"
     else
       VSCODE_HOME="$HOME/.config/Code"
@@ -393,38 +393,40 @@ setup_vscode() {
     "$VSCODE_HOME/User/keybindings.json"
 
     modules="
-        christian-kohler.npm-intellisense
-        christian-kohler.path-intellisense
-        CoenraadS.bracket-pair-colorizer
-        Compulim.vscode-clock
-        DavidAnson.vscode-markdownlint
-        dbaeumer.vscode-eslint
-        donjayamanne.githistory
-        dzannotti.vscode-babel-coloring
-        eamodio.gitlens
-        EditorConfig.EditorConfig
-        eg2.vscode-npm-script
-        esbenp.prettier-vscode
-        felixfbecker.php-intellisense
-        formulahendry.auto-close-tag
-        formulahendry.auto-rename-tag
-        jpoissonnier.vscode-styled-components
-        leizongmin.node-module-intellisense
-        magicstack.MagicPython
-        mgmcdermott.vscode-language-babel
-        mikestead.dotenv
-        ms-python.python
-        natewallace.angular2-inline
-        octref.vetur
-        PKief.material-icon-theme
-        redhat.vscode-yaml
-        shinnn.stylelint
-        sysoev.language-stylus
-        tomphilbin.gruvbox-themes
-        VisualStudioExptTeam.vscodeintellicode
-        vscodevim.vim
-        wix.vscode-import-cost
-        Zignd.html-css-class-completion
+      christian-kohler.npm-intellisense
+      christian-kohler.path-intellisense
+      CoenraadS.bracket-pair-colorizer
+      Compulim.vscode-clock
+      DavidAnson.vscode-markdownlint
+      dbaeumer.vscode-eslint
+      donjayamanne.githistory
+      dzannotti.vscode-babel-coloring
+      eamodio.gitlens
+      EditorConfig.EditorConfig
+      eg2.vscode-npm-script
+      esbenp.prettier-vscode
+      felixfbecker.php-intellisense
+      formulahendry.auto-close-tag
+      formulahendry.auto-rename-tag
+      Gruntfuggly.todo-tree
+      jpoissonnier.vscode-styled-components
+      magicstack.MagicPython
+      mgmcdermott.vscode-language-babel
+      mikestead.dotenv
+      ms-python.python
+      natewallace.angular2-inline
+      octref.vetur
+      PKief.material-icon-theme
+      redhat.vscode-yaml
+      stylelint.vscode-stylelint
+      sysoev.language-stylus
+      tomphilbin.gruvbox-themes
+      vincaslt.highlight-matching-tag
+      VisualStudioExptTeam.vscodeintellicode
+      vscodevim.vim
+      WakaTime.vscode-wakatime
+      wix.vscode-import-cost
+      Zignd.html-css-class-completion
     "
     for module in $modules; do
       code --install-extension "$module" || true
