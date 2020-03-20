@@ -99,7 +99,7 @@
   "editor.foldingStrategy": "indentation",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.fontFamily": "Operator Mono Lig, Fira Code",
+  "editor.fontFamily": "Operator Mono Lig, FiraCode Nerd Font",
   "editor.renderWhitespace": "all",
   "editor.renderControlCharacters": true,
   "editor.suggestSelection": "first",
@@ -193,7 +193,7 @@
   // terminal
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.fontSize": 14,
   "terminal.external.linuxExec": "gnome terminal",
   "terminal.integrated.fontWeight": "500",

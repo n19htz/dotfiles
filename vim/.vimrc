@@ -45,10 +45,10 @@ else
 endif
 
 if has('gui_running')
-    set columns=80
-    set lines=25
+    set columns=100
+    set lines=65
     set guioptions-=T   " Remove the toolbar.
-    set guifont=MesloLGM\ Nerd\ Font:h12
+    set guifont=FiraCode\ Nerd\ Font:h12
 
     " Disable MacVim-specific Cmd/Alt key mappings.
     if has("gui_macvim")
