@@ -6,7 +6,6 @@
 # pasting or typing URLs.
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
-. /usr/local/etc/profile.d/z.sh
 # =============================================================================
 #                                   Plugins
 # =============================================================================
@@ -579,14 +578,19 @@ update() {
   # Homebrew
   brew update	
   brew upgrade
-  if [[ $OSTYPE = darwin* ]]; then
-    brew cu 
-  fi  
+#  if [[ $OSTYPE = darwin* ]]; then
+#    brew cu 
+#  fi  
   brew cleanup
+  # Python
+  ln -sf $(brew --cellar Python@3.8)/* ~/.pyenv/versions/
+  ln -sf $(brew --cellar Python)/* ~/.pyenv/versions/
+  pyenv global $(python --version 2>&1 | awk '{print $2}') $(python3.8 --version 2>&1 | awk '{print $2}')
+  pyenv local $(python --version 2>&1 | awk '{print $2}') $(python3.8 --version 2>&1 | awk '{print $2}')
   # Ruby
-  sudo gem update --system
-  sudo gem update
-  sudo gem cleanup
+  gem update --system
+  gem update
+  gem cleanup
   # Java
   sdk update
   #nvm
@@ -595,9 +599,6 @@ update() {
   #git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
   #source $NVM_DIR/nvm.sh
   #cd $OLDPWD
-  nvm install 'lts/carbon'
-  nvm install 'lts/dubnium'
-  nvm install 'lts/*'
   nvm install node --latest-npm --reinstall-packages-from=node 
   #nvm use default
   # npm
@@ -605,6 +606,7 @@ update() {
   npm update -g
   # Shell plugin management
   zplug update
+  .tmux/plugins/tpm/bin/update_plugins all
   vim +PlugUpgrade +PlugUpdate +PlugCLean! +qa
 }
 
@@ -649,4 +651,3 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/n19htz/.sdkman"
 [[ -s "/Users/n19htz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/n19htz/.sdkman/bin/sdkman-init.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

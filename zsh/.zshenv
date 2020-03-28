@@ -20,7 +20,7 @@ fi
 export VISUAL=$EDITOR
 
 #Vagrant home
-export VAGRANT_HOME=/Volumes/Data\ HD/Virtual\ Machines/vagrant
+#export VAGRANT_HOME=/Volumes/Data\ HD/Virtual\ Machines/vagrant
 
 # Pager.
 export PAGER="less -S"
