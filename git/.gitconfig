@@ -32,9 +32,6 @@
 [difftool]
   prompt = false
 
-[difftool "icdiff"]
-  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
-
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
@@ -46,21 +43,13 @@
 [push]
   followTags = true
 
-[rerere]
-	enabled = true
-
 [user]
-	name = Pavel Lapenkov
+	signingKey = BD359B3E3FB44A1C
+	name = Pavel L.
 	email = n19ht3r@gmail.com
 [commit]
-	gpgsign = true
+	gpgSign = true
 [gpg]
 	program = gpg
 [core]
 	excludesfile = /Users/n19htz/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
