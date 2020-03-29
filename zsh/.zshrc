@@ -585,8 +585,8 @@ update() {
   # Python
   ln -sf $(brew --cellar Python@3.8)/* ~/.pyenv/versions/
   ln -sf $(brew --cellar Python)/* ~/.pyenv/versions/
-  pyenv global $(python --version 2>&1 | awk '{print $2}') $(python3.8 --version 2>&1 | awk '{print $2}')
-  pyenv local $(python --version 2>&1 | awk '{print $2}') $(python3.8 --version 2>&1 | awk '{print $2}')
+  pyenv global $(python --version 2>&1 | awk '{print $2}') $(/usr/local/bin/python3.8 --version 2>&1 | awk '{print $2}')
+  pyenv local $(python --version 2>&1 | awk '{print $2}') $(/usr/local/bin/python3.8 --version 2>&1 | awk '{print $2}')
   # Ruby
   gem update --system
   gem update
