@@ -42,7 +42,8 @@
     "use-previous-value": "hook",
     "private-route": "private",
     "public-route": "public",
-    "filters": "review"
+    "filters": "review",
+    "partials": "include"
   },
   // editor
   "editor.codeActionsOnSave": {
@@ -229,7 +230,8 @@
     "razor": "html",
     "plaintext": "jade",
     "vue": "html",
-    "html": "html"
+    "html": "html",
+    "ejs": "html",
   },
   // eslint
   "eslint.alwaysShowStatus": true,
@@ -329,5 +331,6 @@
   "prettier.printWidth": 100,
   "editor.minimap.maxColumn": 100,
   "todo-tree.tree.showScanModeButton": false,
-  "todo-tree.highlights.enabled": true
+  "todo-tree.highlights.enabled": true,
+  "explorer.compactFolders": false
 }

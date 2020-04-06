@@ -306,8 +306,10 @@ alias gx='gitx --all'
 alias cat='bat'
 
 alias vihosts="vim /usr/local/etc/httpd/extra/httpd-vhosts.conf"
-alias downloads="cd /Volumes/Data\ HD/Downloads"
-alias projects="cd /Volumes/Data\ HD/Projects"
+alias downloads="cd ~/Downloads"
+alias projects="cd /Volumes/Activity\ HD/Projects"
+alias datahd="cd /Volumes/Data\ HD/"
+alias activityhd="cd /Volumes/Activity\ HD/"
 
 ## a quick way to get out of current directory ##
 alias cd/='cd /'
@@ -378,9 +380,9 @@ alias mysqlrestart='brew services restart mariadb'
 alias mysqlstop='brew services stop mariadb'
 
 #PGSQL
-alias pgsqlstart='brew services start postgresql'
-alias pgsqlrestart='brew services restart postgresql'
-alias pgsqlstop='brew services stop postgresql'
+alias pgstart='brew services start postgresql'
+alias pgrestart='brew services restart postgresql'
+alias pgstop='brew services stop postgresql'
 
 #REDIS
 alias redisstart='brew services start redis'
@@ -428,6 +430,8 @@ numfiles() {
     N="$(ls $1 | wc -l)";
     echo "$N files in $1";
 }
+
+clearNodeModules() { find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + }
 
 extract () {
    if [ -f $1 ] ; then
