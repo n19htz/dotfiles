@@ -307,9 +307,8 @@ alias cat='bat'
 
 alias vihosts="vim /usr/local/etc/httpd/extra/httpd-vhosts.conf"
 alias downloads="cd ~/Downloads"
-alias projects="cd /Volumes/Activity\ HD/Projects"
+alias projects="cd /Volumes/Data\ HD/Projects"
 alias datahd="cd /Volumes/Data\ HD/"
-alias activityhd="cd /Volumes/Activity\ HD/"
 
 ## a quick way to get out of current directory ##
 alias cd/='cd /'
@@ -421,9 +420,9 @@ function webpackinit() {
 }
 
 # create .tar.gz
-targz() { tar -zcvf $1.tar.gz $1; rm -r $1; }
+targz() { tar -zcvf $1.tar.gz $1; rm -rf $1; }
 # extra .tar.gz
-untargz() { tar -zxvf $1; rm -r $1; }
+untargz() { tar -zxvf $1; rm -rf $1; }
 
 #number of files in directory
 numfiles() {

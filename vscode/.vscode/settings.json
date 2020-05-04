@@ -1,6 +1,7 @@
 {
   // autoclose-tag
   "auto-close-tag.activationOnLanguage": [
+
     "xml",
     "php",
     "jinja",
@@ -37,6 +38,7 @@
     "use-modal": "hook",
     "use-trash": "hook",
     "use-toggle": "hook",
+    "use-scroll-to-hash": "hook",
     "use-form-handlers": "hook",
     "use-object-checker": "hook",
     "use-previous-value": "hook",
