@@ -236,6 +236,18 @@ setopt extended_glob
 # =============================================================================
 #                                   Aliases
 # =============================================================================
+# Function to open Xcode projects from the command line, call with $ xcode
+function xcode {
+
+  proj=$(ls -d *.xcodeproj/ 2>/dev/null)
+
+  if [ -n "$proj" ]; then
+    open -a Xcode "$proj"
+  else
+    echo "No Xcode project detected."
+  fi
+
+}
 
 # Swift editing and file display.
 alias e="$EDITOR"
@@ -431,6 +443,7 @@ numfiles() {
 }
 
 clearNodeModules() { find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + }
+clearDsStore() { find . -name '.DS_Store' -type f -delete }
 
 extract () {
    if [ -f $1 ] ; then

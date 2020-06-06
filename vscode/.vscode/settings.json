@@ -1,7 +1,6 @@
 {
   // autoclose-tag
   "auto-close-tag.activationOnLanguage": [
-
     "xml",
     "php",
     "jinja",
@@ -38,6 +37,8 @@
     "use-modal": "hook",
     "use-trash": "hook",
     "use-toggle": "hook",
+    "use-sortable-data": "hook",
+    "use-auth-user": "hook",
     "use-scroll-to-hash": "hook",
     "use-form-handlers": "hook",
     "use-object-checker": "hook",
@@ -50,7 +51,7 @@
   // editor
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true,
+    "source.fixAll.stylelint": true
   },
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
@@ -60,9 +61,7 @@
   "editor.fontSize": 16,
   "editor.glyphMargin": true,
   "editor.minimap.enabled": false,
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "editor.scrollBeyondLastLine": false,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -77,10 +76,10 @@
           "storage.type",
           "constant.language",
           "entity.other.attribute-name",
-          "variable.language",
+          "variable.language"
         ],
         "settings": {
-          "fontStyle": "italic",
+          "fontStyle": "italic"
         }
       },
       {
@@ -233,7 +232,7 @@
     "plaintext": "jade",
     "vue": "html",
     "html": "html",
-    "ejs": "html",
+    "ejs": "html"
   },
   // eslint
   "eslint.alwaysShowStatus": true,
@@ -254,7 +253,7 @@
     {
       "language": "javascript",
       "autoFix": true
-    },
+    }
   ],
   // breadcrumbs
   "breadcrumbs.enabled": true,
@@ -270,12 +269,7 @@
   // debug
   "debug.allowBreakpointsEverywhere": true,
   "prettier.disableLanguages": [],
-  "prettier.cssEnable": [
-    "css",
-    "less",
-    "sass",
-    "scss",
-  ],
+  "prettier.cssEnable": ["css", "less", "sass", "scss"],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -288,9 +282,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[git-commit]": {
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100],
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[go]": {
@@ -299,7 +291,7 @@
   },
   "[makefile]": {
     "editor.insertSpaces": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.wordWrap": "on",
