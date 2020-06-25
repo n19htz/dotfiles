@@ -40,9 +40,11 @@
     "use-sortable-data": "hook",
     "use-auth-user": "hook",
     "use-scroll-to-hash": "hook",
+    "use-scroll-to-error": "hook",
     "use-form-handlers": "hook",
     "use-object-checker": "hook",
     "use-previous-value": "hook",
+    "use-loading-effect": "hook",
     "private-route": "private",
     "public-route": "public",
     "filters": "review",
@@ -326,5 +328,6 @@
   "editor.minimap.maxColumn": 100,
   "todo-tree.tree.showScanModeButton": false,
   "todo-tree.highlights.enabled": true,
-  "explorer.compactFolders": false
+  "explorer.compactFolders": false,
+  "editor.renameOnType": true
 }
