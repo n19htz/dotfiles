@@ -52,4 +52,4 @@
 [gpg]
 	program = gpg
 [core]
-	excludesfile = /Users/n19htz/.gitignore_global
+	excludesfile = ~/.config/git/ignore

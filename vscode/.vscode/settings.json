@@ -217,8 +217,6 @@
   "javascript.validate.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "javascript.suggest.autoImports": false,
-  // typescript
-  "typescript.validate.enable": false,
   "typescript.suggest.autoImports": false,
   // html
   "html-css-class-completion.enableEmmetSupport": true,
@@ -229,6 +227,7 @@
   "emmet.includeLanguages": {
     "edge": "html",
     "javascript": "javascriptreact",
+    "typescript": "typescriptreact",
     "vue-html": "html",
     "razor": "html",
     "plaintext": "jade",
@@ -255,6 +254,10 @@
     {
       "language": "javascript",
       "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
     }
   ],
   // breadcrumbs
@@ -273,6 +276,9 @@
   "prettier.disableLanguages": [],
   "prettier.cssEnable": ["css", "less", "sass", "scss"],
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[django-html]": {
@@ -329,5 +335,6 @@
   "todo-tree.tree.showScanModeButton": false,
   "todo-tree.highlights.enabled": true,
   "explorer.compactFolders": false,
-  "editor.renameOnType": true
+"editor.renameOnType": true,
+"python.languageServer": "Microsoft"
 }
