@@ -53,7 +53,8 @@
   // editor
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": true,
+    "source.fixAll.prettier": true
   },
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
@@ -101,7 +102,6 @@
       }
     ]
   },
-  "editor.snippetSuggestions": "none",
   "editor.tabCompletion": "on",
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 100,
@@ -118,7 +118,6 @@
   "editor.wordBasedSuggestions": false,
   // explorer
   "explorer.confirmDelete": false,
-  "explorer.decorations.badges": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
   "explorer.sortOrder": "type",
@@ -151,7 +150,6 @@
   "git.confirmSync": false,
   // python
   "python.linting.enabled": true,
-  "python.jediEnabled": false,
   "python.formatting.provider": "none",
   "python.pythonPath": "${workspaceFolder}/venv/bin/python3",
   "python.terminal.activateEnvironment": true,
@@ -226,8 +224,6 @@
   "emmet.showExpandedAbbreviation": "always",
   "emmet.includeLanguages": {
     "edge": "html",
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact",
     "vue-html": "html",
     "razor": "html",
     "plaintext": "jade",
@@ -237,44 +233,13 @@
   },
   // eslint
   "eslint.alwaysShowStatus": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "language": "vue",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    },
-    {
-      "language": "html",
-      "autoFix": true
-    },
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "typescript",
-      "autoFix": true
-    }
-  ],
   // breadcrumbs
   "breadcrumbs.enabled": true,
   // clock
   "clock.dateFormat": "mmm dS yyyy, HH:MM",
-  // html2pug
-  "html2pug": {
-    "tabs": false, // !editor.options.insertSpaces
-    "fragment": false,
-    "doubleQuotes": true,
-    "commas": true
-  },
   // debug
   "debug.allowBreakpointsEverywhere": true,
   "prettier.disableLanguages": [],
-  "prettier.cssEnable": ["css", "less", "sass", "scss"],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -314,7 +279,7 @@
       "comments": false,
       "strings": true
     },
-    "editor.autoIndent": false,
+    "editor.autoIndent": "none",
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
@@ -335,6 +300,15 @@
   "todo-tree.tree.showScanModeButton": false,
   "todo-tree.highlights.enabled": true,
   "explorer.compactFolders": false,
-"editor.renameOnType": true,
-"python.languageServer": "Microsoft"
+  "editor.renameOnType": true,
+  "python.languageServer": "Microsoft",
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+  "vim.easymotion": true,
+  "vim.highlightedyank.enable": true,
+  "vim.replaceWithRegister": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "css.fileExtensions": ["css", "scss"]
 }
