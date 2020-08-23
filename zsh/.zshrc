@@ -240,8 +240,11 @@ setopt extended_glob
 function xcode {
 
   proj=$(ls -d *.xcodeproj/ 2>/dev/null)
+  workspace=$(ls -d *.xcworkspace/ 2>/dev/null)
 
-  if [ -n "$proj" ]; then
+  if [ -n "$workspace" ]; then
+    open -a Xcode "$workspace"
+  elif [ -n "$proj" ]; then
     open -a Xcode "$proj"
   else
     echo "No Xcode project detected."

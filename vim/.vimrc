@@ -167,7 +167,7 @@ Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 Plug 'mephux/bro.vim'
 Plug 'mhinz/vim-signify'
 Plug 'morhetz/gruvbox'
@@ -305,7 +305,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 " -- vimtex ------------------------------------------------------------------
 
-let g:vimtex_view_method = 'skim'
+"let g:vimtex_view_method = 'skim'
 
 " -- Tmuxline ----------------------------------------------------------------
 

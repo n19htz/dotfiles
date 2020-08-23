@@ -216,6 +216,7 @@
   "javascript.updateImportsOnFileMove.enabled": "never",
   "javascript.suggest.autoImports": false,
   "typescript.suggest.autoImports": false,
+  "typescript.validate.enable": true,
   // html
   "html-css-class-completion.enableEmmetSupport": true,
   // emmet
