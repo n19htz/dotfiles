@@ -602,10 +602,10 @@ update() {
 #  fi  
   brew cleanup
   # Python
-  ln -sf $(brew --cellar Python@3.8)/* ~/.pyenv/versions/
-  ln -sf $(brew --cellar Python)/* ~/.pyenv/versions/
-  pyenv global $(python --version 2>&1 | awk '{print $2}') $(/usr/local/bin/python3.8 --version 2>&1 | awk '{print $2}')
-  pyenv local $(python --version 2>&1 | awk '{print $2}') $(/usr/local/bin/python3.8 --version 2>&1 | awk '{print $2}')
+  # ln -sf $(brew --cellar Python@3.9)/* ~/.pyenv/versions/
+  # ln -sf $(brew --cellar Python)/* ~/.pyenv/versions/
+  # pyenv global $(python --version 2>&1 | awk '{print $2}') $(/usr/local/bin/python3.9 --version 2>&1 | awk '{print $2}')
+  # pyenv local $(python --version 2>&1 | awk '{print $2}') $(/usr/local/bin/python3.9 --version 2>&1 | awk '{print $2}')
   # Ruby
   gem update --system
   gem update

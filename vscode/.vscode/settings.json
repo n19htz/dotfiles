@@ -19,11 +19,19 @@
     "firebase.utils.js": "firebase",
     "firebase.js": "firebase",
     "*.selectors.js": "Redux-store",
+    "*.selectors.ts": "Redux-store",
+    "*.slice.js": "Redux-reducer",
+    "*.slice.ts": "Redux-reducer",
     "*.sagas.js": "Redux-store",
+    "*.sagas.ts": "Redux-store",
     "*.saga.js": "Redux-store",
+    "*.saga.ts": "Redux-store",
     "http.js": "http",
     "api.js": "http",
-    "*.hook.js": "velocity"
+    "*.hook.js": "velocity",
+    "http.ts": "http",
+    "api.ts": "http",
+    "*.hook.ts": "velocity"
   },
   "material-icon-theme.folders.associations": {
     "selectors": "redux-store",
@@ -39,6 +47,7 @@
     "use-toggle": "hook",
     "use-sortable-data": "hook",
     "use-auth-user": "hook",
+    "use-navigation-menu": "hook",
     "use-scroll-to-hash": "hook",
     "use-scroll-to-error": "hook",
     "use-form-handlers": "hook",
@@ -53,8 +62,9 @@
   // editor
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true,
-    "source.fixAll.prettier": true
+    "source.fixAll.tslint": true,
+    "source.fixAll.stylelint": true
+    // "source.fixAll.prettier": true
   },
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
@@ -244,7 +254,13 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[django-html]": {
