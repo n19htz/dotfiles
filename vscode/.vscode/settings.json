@@ -168,6 +168,9 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.integrated.enableBell": false,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.experimentalLinkProvider": false,
+  "terminal.integrated.rendererType": "auto",
   // vetur
   "vetur.validation.script": false,
   "vetur.validation.style": false,
@@ -317,7 +320,7 @@
   "todo-tree.tree.showScanModeButton": false,
   "todo-tree.highlights.enabled": true,
   "explorer.compactFolders": false,
-  "editor.renameOnType": true,
+  "editor.linkedEditing": true,
   "python.languageServer": "Microsoft",
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
@@ -327,5 +330,6 @@
   "vim.highlightedyank.enable": true,
   "vim.replaceWithRegister": true,
   "editor.cursorSmoothCaretAnimation": true,
-  "css.fileExtensions": ["css", "scss"]
+  "css.fileExtensions": ["css", "scss"],
+  "terminal.integrated.allowChords": false
 }
