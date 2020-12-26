@@ -25,7 +25,7 @@ set printoptions+=header:0
 scriptencoding utf-8
 
 if has("spell")
-  set spelllang=en,de,fr
+  set spelllang=en,ru
   set spellfile=~/.vim/spell/spellfile.add
 endif
 
