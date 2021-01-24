@@ -280,7 +280,8 @@
   },
   "[go]": {
     "editor.insertSpaces": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.formatOnSave": true
   },
   "[makefile]": {
     "editor.insertSpaces": false,
@@ -330,6 +331,8 @@
   "vim.highlightedyank.enable": true,
   "vim.replaceWithRegister": true,
   "editor.cursorSmoothCaretAnimation": true,
-  "css.fileExtensions": ["css", "scss"],
-  "terminal.integrated.allowChords": false
+  "terminal.integrated.allowChords": false,
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"]
 }

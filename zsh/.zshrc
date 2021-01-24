@@ -455,6 +455,7 @@ extract () {
            *.tar.gz)    tar xvzf $1    ;;
            *.bz2)       bunzip2 $1     ;;
            *.rar)       unrar x $1       ;;
+           *.RAR)       unrar x $1       ;;
            *.gz)        gunzip $1      ;;
            *.tar)       tar xvf $1     ;;
            *.tbz2)      tar xvjf $1    ;;
@@ -618,7 +619,9 @@ update() {
   #git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
   #source $NVM_DIR/nvm.sh
   #cd $OLDPWD
+  nvm install --lts --reinstall-packages-from=lts
   nvm install node --latest-npm --reinstall-packages-from=node 
+  nvm use node
   #nvm use default
   # npm
   npm install npm -g

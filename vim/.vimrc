@@ -193,6 +193,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'jalvesaq/Nvim-R'
 Plug 'tomasiser/vim-code-dark'
 Plug 'crusoexia/vim-monokai'
+Plug 'tpope/vim-fireplace'
 
 call plug#end()
 
