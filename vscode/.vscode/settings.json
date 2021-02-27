@@ -19,28 +19,53 @@
     "firebase.utils.js": "firebase",
     "firebase.js": "firebase",
     "*.selectors.js": "Redux-store",
+    "*.selectors.ts": "Redux-store",
+    "*.slice.js": "Redux-reducer",
+    "*.slice.ts": "Redux-reducer",
     "*.sagas.js": "Redux-store",
+    "*.sagas.ts": "Redux-store",
     "*.saga.js": "Redux-store",
-    "*.hook.js": "React_ts",
-    "http.js": "http"
+    "*.saga.ts": "Redux-store",
+    "http.js": "http",
+    "api.js": "http",
+    "*.hook.js": "velocity",
+    "http.ts": "http",
+    "api.ts": "http",
+    "*.hook.ts": "velocity"
   },
   "material-icon-theme.folders.associations": {
     "selectors": "redux-store",
     "router": "routes",
     "sagas": "Redux-store",
-    "error-boundary": "Error",
+    "use-checker": "hook",
+    "use-query": "hook",
+    "use-sidebar": "hook",
+    "use-toasts": "hook",
     "use-validation": "hook",
     "use-modal": "hook",
-    "use-query": "hook",
-    "use-toast": "hook",
-    "use-toasts": "hook",
-    "use-sidebar": "hook",
-    "use-checker": "hook",
+    "use-trash": "hook",
+    "use-toggle": "hook",
+    "use-sortable-data": "hook",
+    "use-auth-user": "hook",
+    "use-navigation-menu": "hook",
+    "use-scroll-to-hash": "hook",
+    "use-scroll-to-error": "hook",
+    "use-form-handlers": "hook",
+    "use-object-checker": "hook",
+    "use-previous-value": "hook",
+    "use-loading-effect": "hook",
     "private-route": "private",
     "public-route": "public",
     "filters": "review",
+    "partials": "include"
   },
   // editor
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.fixAll.stylelint": true
+    // "source.fixAll.prettier": true
+  },
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
   "editor.colorDecorators": true,
@@ -49,9 +74,7 @@
   "editor.fontSize": 16,
   "editor.glyphMargin": true,
   "editor.minimap.enabled": false,
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "editor.scrollBeyondLastLine": false,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -66,10 +89,10 @@
           "storage.type",
           "constant.language",
           "entity.other.attribute-name",
-          "variable.language",
+          "variable.language"
         ],
         "settings": {
-          "fontStyle": "italic",
+          "fontStyle": "italic"
         }
       },
       {
@@ -89,7 +112,6 @@
       }
     ]
   },
-  "editor.snippetSuggestions": "none",
   "editor.tabCompletion": "on",
   "editor.wordWrap": "on",
   "editor.wordWrapColumn": 100,
@@ -106,7 +128,6 @@
   "editor.wordBasedSuggestions": false,
   // explorer
   "explorer.confirmDelete": false,
-  "explorer.decorations.badges": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
   "explorer.sortOrder": "type",
@@ -122,7 +143,7 @@
   "files.trimFinalNewlines": true,
   "files.autoSave": "onFocusChange",
   "files.exclude": {
-    "**/.vscode": true,
+    "**/.vscode": false,
     "**/.DS_Store": true,
     "**/__pycache__": true,
     "**/.cache": true,
@@ -139,7 +160,6 @@
   "git.confirmSync": false,
   // python
   "python.linting.enabled": true,
-  "python.jediEnabled": false,
   "python.formatting.provider": "none",
   "python.pythonPath": "${workspaceFolder}/venv/bin/python3",
   "python.terminal.activateEnvironment": true,
@@ -148,6 +168,9 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.integrated.enableBell": false,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.experimentalLinkProvider": false,
+  "terminal.integrated.rendererType": "auto",
   // vetur
   "vetur.validation.script": false,
   "vetur.validation.style": false,
@@ -156,8 +179,7 @@
   "vetur.format.enable": false,
   // window
   "window.clickThroughInactive": false,
-  "window.newWindowDimensions": "maximized",
-  "window.zoomLevel": 0,
+"window.newWindowDimensions": "maximized",
   // workbench / terminal styles
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
@@ -205,9 +227,8 @@
   "javascript.validate.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
   "javascript.suggest.autoImports": false,
-  // typescript
-  "typescript.validate.enable": false,
   "typescript.suggest.autoImports": false,
+  "typescript.validate.enable": true,
   // html
   "html-css-class-completion.enableEmmetSupport": true,
   // emmet
@@ -216,60 +237,32 @@
   "emmet.showExpandedAbbreviation": "always",
   "emmet.includeLanguages": {
     "edge": "html",
-    "javascript": "javascriptreact",
     "vue-html": "html",
     "razor": "html",
     "plaintext": "jade",
     "vue": "html",
-    "html": "html"
+    "html": "html",
+    "ejs": "html"
   },
   // eslint
   "eslint.alwaysShowStatus": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "language": "vue",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    },
-    {
-      "language": "html",
-      "autoFix": true
-    },
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-  ],
   // breadcrumbs
   "breadcrumbs.enabled": true,
   // clock
   "clock.dateFormat": "mmm dS yyyy, HH:MM",
-  // html2pug
-  "html2pug": {
-    "tabs": false, // !editor.options.insertSpaces
-    "fragment": false,
-    "doubleQuotes": true,
-    "commas": true
-  },
   // debug
   "debug.allowBreakpointsEverywhere": true,
-  "stylelint.enable": true,
-  // prettier
-  "prettier.printWidth": 100,
-  "prettier.trailingComma": "all",
   "prettier.disableLanguages": [],
-  "prettier.singleQuote": true,
-  "prettier.cssEnable": [
-    "css",
-    "less",
-    "sass",
-    "scss",
-  ],
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[django-html]": {
@@ -281,18 +274,17 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[git-commit]": {
-    "editor.rulers": [
-      100
-    ],
+    "editor.rulers": [100],
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[go]": {
     "editor.insertSpaces": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.formatOnSave": true
   },
   "[makefile]": {
     "editor.insertSpaces": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.wordWrap": "on",
@@ -307,7 +299,7 @@
       "comments": false,
       "strings": true
     },
-    "editor.autoIndent": false,
+    "editor.autoIndent": "none",
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
@@ -322,8 +314,24 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "todo-tree.tree.showScanModeButton": false
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 100,
+  "editor.minimap.maxColumn": 100,
+  "todo-tree.tree.showScanModeButton": false,
+  "todo-tree.highlights.enabled": true,
+  "explorer.compactFolders": false,
+  "editor.linkedEditing": true,
+  "python.languageServer": "Microsoft",
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+  "vim.easymotion": true,
+  "vim.highlightedyank.enable": true,
+  "vim.replaceWithRegister": true,
+  "editor.cursorSmoothCaretAnimation": true,
+  "terminal.integrated.allowChords": false,
+  "go.useLanguageServer": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"]
 }

@@ -302,6 +302,7 @@ alias gx='gitx --all'
 
 alias downloads="cd ~/Downloads"
 alias projects="cd ~/Projects"
+alias cat="bat"
 
 ## a quick way to get out of current directory ##
 alias cd/='cd /'
