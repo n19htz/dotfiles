@@ -52,7 +52,7 @@
 [user]
 	name = Pavel L.
 	email = n19ht3r@gmail.com
-	signingkey = ED9CDB24828CFCF7
+	signingkey = A9F09F4D9CC3D2FE
 [commit]
 	gpgsign = true
 [gpg]
