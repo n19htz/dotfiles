@@ -179,8 +179,8 @@
   "vetur.format.enable": false,
   // window
   "window.clickThroughInactive": false,
-  "window.newWindowDimensions": "maximized",
-  "window.zoomLevel": 0,
+"window.newWindowDimensions": "maximized",
+"window.zoomLevel": 0,
   // workbench / terminal styles
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
