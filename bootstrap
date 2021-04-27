@@ -387,43 +387,55 @@ setup_vscode() {
     fi
     mkdir -p "$VSCODE_HOME/User"
 
-    ln -sf "~/.dotfiles/vscode/.vscode/settings.json"
-    "$VSCODE_HOME/User/settings.json"
-    ln -sf "~/.dotfiles/vscode/.vscode/keybindings.json"
-    "$VSCODE_HOME/User/keybindings.json"
+    ln -sf "~/.dotfiles/vscode/.vscode/settings.json" "$VSCODE_HOME/User/settings.json"
+    ln -sf "~/.dotfiles/vscode/.vscode/keybindings.json" "$VSCODE_HOME/User/keybindings.json"
 
     modules="
-      adamwalzer.scss-lint
-      alexdima.copy-relative-path
-      batisteo.vscode-django
+      christian-kohler.npm-intellisense
       christian-kohler.path-intellisense
       CoenraadS.bracket-pair-colorizer
-      csantiago132.intellij-ish-darcula-theme
+      Compulim.vscode-clock
+      DavidAnson.vscode-markdownlint
       dbaeumer.vscode-eslint
       DigitalBrainstem.javascript-ejs-support
       donjayamanne.githistory
-      eamodio.gitlens
+      dsznajder.es7-react-js-snippets
+      dzannotti.vscode-babel-coloring
+      ecmel.vscode-html-css
       EditorConfig.EditorConfig
       eg2.vscode-npm-script
-      felixfbecker.php-intellisense
+      esbenp.prettier-vscode
       formulahendry.auto-close-tag
-      glen-84.sass-lint
-      hbenl.vscode-firefox-debug
-      hollowtree.vue-snippets
-      HookyQR.beautify
-      humy2833.ftp-simple
+      golang.go
+      GraphQL.vscode-graphql
+      Gruntfuggly.todo-tree
+      jinliming2.vscode-go-template
+      jpoissonnier.vscode-styled-components
       magicstack.MagicPython
-      mrmlnc.vscode-apache
+      mgmcdermott.vscode-language-babel
+      mikestead.dotenv
+      mrmlnc.vscode-pugbeautify
+      ms-azuretools.vscode-docker
       ms-python.python
+      ms-toolsai.jupyter
       natewallace.angular2-inline
       octref.vetur
+      oderwat.indent-rainbow
       PKief.material-icon-theme
+      QassimFarid.ejs-language-support
       redhat.vscode-yaml
-      shinnn.stylelint
+      shanoor.vscode-nginx
+      shd101wyy.markdown-preview-enhanced
+      stylelint.vscode-stylelint
+      sysoev.language-stylus
+      tht13.python
       tomphilbin.gruvbox-themes
+      vincaslt.highlight-matching-tag
       VisualStudioExptTeam.vscodeintellicode
-      vscode-icons-team.vscode-icons
       vscodevim.vim
+      WakaTime.vscode-wakatime
+      wix.vscode-import-cost
+      xabikos.JavaScriptSnippets
       Zignd.html-css-class-completion
     "
     for module in $modules; do
