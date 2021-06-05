@@ -237,6 +237,7 @@ setopt extended_glob
 #                                   Aliases
 # =============================================================================
 # Function to open Xcode projects from the command line, call with $ xcode
+alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g"
 function xcode {
 
   proj=$(ls -d *.xcodeproj/ 2>/dev/null)
@@ -586,15 +587,6 @@ update() {
       kill -0 "$$" || exit
     done 2>/dev/null &
   fi
-  if [[ $OSTYPE = linux* ]]; then
-    sudo apt-get update
-    sudo apt-get -y upgrade
-    sudo apt-get clean
-    sudo apt -y autoremove
-  elif [[ $OSTYPE = darwin* ]]; then
-    # System
-    sudo softwareupdate -i -a
-  fi
   # Homebrew
   brew update	
   brew upgrade
@@ -612,14 +604,13 @@ update() {
   gem update
   gem cleanup
   # Java
-  sdk update
+  #sdk update
   #nvm
   #cd $NVM_DIR 
   #git fetch -p
   #git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
   #source $NVM_DIR/nvm.sh
   #cd $OLDPWD
-  nvm install --lts --reinstall-packages-from=lts
   nvm install node --latest-npm --reinstall-packages-from=node 
   nvm use node
   #nvm use default

@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 15,
+    fontSize: 12,
 
     // font family with optional fallbacks
     fontFamily: '"FiraCode Nerd Font", "Hack Nerd Font", "Monaco"',
@@ -33,7 +33,7 @@ module.exports = {
     cursorAccentColor: '#272727',
 
     // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorShape: 'BEAM',
+    cursorShape: 'BLOCK',
 
     // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: true,
@@ -52,7 +52,7 @@ module.exports = {
     borderColor: 'transparent',
 
     // custom CSS to embed in the main window
-    css: '',
+    css: ``,
 
     // custom CSS to embed in the terminal window
     termCSS: '',
@@ -137,7 +137,8 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: [
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -148,4 +149,5 @@ module.exports = {
     // Example
     // 'window:devtools': 'cmd+alt+o',
   },
+
 };
