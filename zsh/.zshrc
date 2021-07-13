@@ -238,6 +238,7 @@ setopt extended_glob
 # =============================================================================
 # Function to open Xcode projects from the command line, call with $ xcode
 alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g"
+alias dk_clear="docker system prune && kubectl delete deployment --all"
 function xcode {
 
   proj=$(ls -d *.xcodeproj/ 2>/dev/null)
