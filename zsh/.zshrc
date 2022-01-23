@@ -11,6 +11,12 @@ zle -N self-insert url-quote-magic
 # =============================================================================
 #                                   Plugins
 # =============================================================================
+function prompt_my_npm_version() {
+  if which npm > /dev/null 2>&1; then
+    npm_version="$(npm --version)"
+    p10k segment -f red -t "${npm_version}" -i " "
+  fi
+}
 
 # powerlevel9k prompt theme
 DEFAULT_USER=$USER
@@ -28,12 +34,16 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}╭─"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}╰─➤ "
 POWERLEVEL9K_STATUS_OK=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir_joined
-                                   dir_writable_joined)
+                                   dir_writable_joined nvm)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time virtualenv vcs
                                     background_jobs_joined time_joined
                                     user_joined os_icon_joined host_joined)
 POWERLEVEL9K_VIRTUALENV_BACKGROUND="clear"
 POWERLEVEL9K_VIRTUALENV_FOREGROUND="yellow"
+POWERLEVEL9K_NODE_VERSION_BACKGROUND="clear"
+POWERLEVEL9K_NODE_VERSION_FOREGROUND="green"
+POWERLEVEL9K_NVM_BACKGROUND="clear"
+POWERLEVEL9K_NVM_FOREGROUND="green"
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND="clear"
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND="green"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="clear"
@@ -607,4 +617,3 @@ update() {
   vim +PlugUpgrade +PlugUpdate +PlugCLean! +qa
 }
 
-source $ZSH/oh-my-zsh.sh
