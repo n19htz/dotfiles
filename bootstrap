@@ -75,8 +75,6 @@ setup_macos() {
   # Reveal IP address, hostname, OS version, etc. when clicking the clock in
   # the login window.
   sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-  # Restart automatically if the computer freezes.
-  sudo systemsetup -setrestartfreeze on
   # Accelerated playback when adjusting the window size (Cocoa applications).
   defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
   # Show language menu in the top right corner of the boot screen.
@@ -206,14 +204,14 @@ setup_homebrew() {
   if which brew > /dev/null 2>&1; then
     log "upgrading existing Homebrew packages"
     brew upgrade
-  elif which ruby > /dev/null 2>&1; then
+  elif which /bin/bash > /dev/null 2>&1; then
     log "installing Homebrew"
     case "$(uname -s)" in
       Darwin)
-        homebrew="Homebrew/install/master/install"
+        homebrew="Homebrew/install/HEAD/install.sh"
         ;;
       Linux)
-        homebrew="Linuxbrew/install/master/install"
+        homebrew="Linuxbrew/install/HEAD/install.sh"
         exit 1
         ;;
       *)
@@ -221,7 +219,8 @@ setup_homebrew() {
         exit 1
         ;;
     esac
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/$homebrew)"
+    #ruby -e "$(curl -fsSL https://raw.githubusercontent.com/$homebrew)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/$homebrew)"
   else
     log "cannot install Homebrew (ruby not found)"
     exit 1

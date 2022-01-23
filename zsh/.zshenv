@@ -74,3 +74,4 @@ fi
 
 # vim: ft=zsh
 
+. "$HOME/.cargo/env"

@@ -1,3 +1,5 @@
+export ZSH="$HOME/.oh-my-zsh"
+export ZPLUG_HOME="$HONE/.zplug"
 # =============================================================================
 #                          Pre-Plugin Configuration
 # =============================================================================
@@ -238,6 +240,7 @@ setopt extended_glob
 # =============================================================================
 # Function to open Xcode projects from the command line, call with $ xcode
 alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g"
+alias webstorm="open -na WebStorm.app --args $@"
 alias dk_clear="docker system prune && kubectl delete deployment --all"
 function xcode {
 
@@ -340,7 +343,6 @@ alias .5='cd ../../../../..'
 # VLC
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
 alias path='echo -e ${PATH//:/\\n}'
-alias now='date +"%T"'
 
 # Mount
 alias mount='mount |column -t'
@@ -591,31 +593,12 @@ update() {
   # Homebrew
   brew update	
   brew upgrade
-#  if [[ $OSTYPE = darwin* ]]; then
-#    brew cu 
-#  fi  
   brew cleanup
-  # Python
-  # ln -sf $(brew --cellar Python@3.9)/* ~/.pyenv/versions/
-  # ln -sf $(brew --cellar Python)/* ~/.pyenv/versions/
-  # pyenv global $(python --version 2>&1 | awk '{print $2}') $(/usr/local/bin/python3.9 --version 2>&1 | awk '{print $2}')
-  # pyenv local $(python --version 2>&1 | awk '{print $2}') $(/usr/local/bin/python3.9 --version 2>&1 | awk '{print $2}')
-  # Ruby
   gem update --system
   gem update
   gem cleanup
-  # Java
-  #sdk update
-  #nvm
-  #cd $NVM_DIR 
-  #git fetch -p
-  #git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
-  #source $NVM_DIR/nvm.sh
-  #cd $OLDPWD
   nvm install node --latest-npm --reinstall-packages-from=node 
   nvm use node
-  #nvm use default
-  # npm
   npm install npm -g
   npm update -g
   # Shell plugin management
@@ -624,44 +607,4 @@ update() {
   vim +PlugUpgrade +PlugUpdate +PlugCLean! +qa
 }
 
-# =============================================================================
-#                                   Startup
-# =============================================================================
-
-# Load SSH and GPG agents via keychain.
-#setup_agents() {
-#  if [[ $UID -eq 0 ]]; then
-#    return
-#  fi
-#  local -a ssh_keys gpg_keys
-#  ssh_keys=(~/.ssh/**/*pub(.N:r))
-#  gpg_keys=$(gpg -K --with-colons 2>/dev/null \
-#               | awk -F : '$1 == "sec" { print $5 }')
-#  if which keychain > /dev/null 2>&1; then
-#    if (( $#ssh_keys > 0 )) || (( $#gpg_keys > 0 )); then
-#      eval $(keychain -q --nogui --eval --host fix \
-#        --agents ssh,gpg $ssh_keys ${(f)gpg_keys})
-#    fi
-#  fi
-#}
-#setup_agents
-#unfunction setup_agents
-
-# Source local customizations.
-if [[ -f ~/.zshrc.local ]]; then
-  source ~/.zshrc.local
-fi
-
-if [[ -f ~/.fzf.zsh ]]; then
-  source ~/.fzf.zsh
-fi
-
-###-tns-completion-start-###
-if [ -f /Users/n19htz/.tnsrc ]; then 
-    source /Users/n19htz/.tnsrc 
-fi
-###-tns-completion-end-###
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/n19htz/.sdkman"
-[[ -s "/Users/n19htz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/n19htz/.sdkman/bin/sdkman-init.sh"
+source $ZSH/oh-my-zsh.sh
