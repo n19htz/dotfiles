@@ -461,6 +461,7 @@ numfiles() {
 
 clearNodeModules() { find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + }
 clearDsStore() { find . -name '.DS_Store' -type f -delete }
+clearSbStories() { find . -name '*.stories.ts' -type f -delete }
 
 extract () {
    if [ -f $1 ] ; then
@@ -603,6 +604,7 @@ update() {
   # Homebrew
   brew update	
   brew upgrade
+  brew upgrade --cask --greedy
   brew cleanup
   gem update --system
   gem update
@@ -617,3 +619,7 @@ update() {
   vim +PlugUpgrade +PlugUpdate +PlugCLean! +qa
 }
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

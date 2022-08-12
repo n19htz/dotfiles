@@ -94,6 +94,13 @@ nnoremap <silent> vv <C-w>v
 nnoremap <silent> v2 :set columns=161<CR><C-w>v
 nnoremap <silent> v3 :set columns=242<CR><C-w>v<C-w>v
 
+nnoremap <A-Down> :m .+1<CR>==
+nnoremap <A-Up> :m .-2<CR>==
+inoremap <A-Down> <Esc>:m .+1<CR>==gi
+inoremap <A-Up> <Esc>:m .-2<CR>==gi
+vnoremap <A-Down> :m '>+1<CR>gv=gv
+vnoremap <A-Up> :m '<-2<CR>gv=gv
+
 " Clear last search highlighting
 nnoremap <CR> :noh<CR><CR>
 
@@ -194,6 +201,18 @@ Plug 'jalvesaq/Nvim-R'
 Plug 'tomasiser/vim-code-dark'
 Plug 'crusoexia/vim-monokai'
 Plug 'tpope/vim-fireplace'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdcommenter'
+Plug 'dense-analysis/ale'
+Plug 'preservim/nerdtree'
+Plug 'prettier/vim-prettier', { 'do': 'npm install --production' }
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'iamcco/coc-angular'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 

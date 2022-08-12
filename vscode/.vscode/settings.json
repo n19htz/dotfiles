@@ -76,7 +76,6 @@
   "editor.colorDecorators": true,
   "editor.dragAndDrop": false,
   "editor.fontLigatures": true,
-  "editor.fontSize": 13,
   "editor.glyphMargin": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [100],
@@ -286,7 +285,11 @@
   },
   "[markdown]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
@@ -357,6 +360,7 @@
     "asdfasdf",
     "asynciterable",
     "Authors",
+    "autobind",
     "autoclosed",
     "autosize",
     "bandmember",
@@ -427,9 +431,11 @@
     "freshgreen",
     "fullname",
     "GOST",
+    "GRNTI",
     "gulpfile",
     "hrefs",
     "httponly",
+    "IDENTIFICATOR",
     "Idents",
     "iframe",
     "imask",
@@ -528,6 +534,8 @@
     "skaffold",
     "sourcemappingurl",
     "spinner",
+    "sprintf",
+    "Srcs",
     "srsearch",
     "sslify",
     "storysource",
@@ -537,6 +545,7 @@
     "submenu",
     "subschemas",
     "svgr",
+    "sweed",
     "swipeable",
     "tabindex",
     "templating",
@@ -621,11 +630,6 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "stylelint.validate": [
-    "css",
-    "less",
-    "postcss",
-    "scss"
-  ],
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
   "bracketPairColorizer.depreciation-notice": false
 }
