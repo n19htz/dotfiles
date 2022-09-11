@@ -249,8 +249,6 @@ setopt extended_glob
 #                                   Aliases
 # =============================================================================
 # Function to open Xcode projects from the command line, call with $ xcode
-alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g"
-alias webstorm="open -na WebStorm.app --args $@"
 alias dk_clear="docker system prune && kubectl delete deployment --all"
 function xcode {
 

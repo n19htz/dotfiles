@@ -19,6 +19,8 @@ usage() {
   echo "    gterm        setup Gruvbox theme for Gnome terminal"
   echo "    vscode       setup Vscode"
   echo "    hyper        setup Hyper terminal config"
+  echo "    ranger       setup ranger file browser"
+  echo "    kitty        setup kitty terminal"
   echo
   echo "without any arguments, all aspects will be setup (in the above order)"
   echo
@@ -195,41 +197,19 @@ setup_macos() {
   # Enable the debug menu in Disk Utility.
   defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
   defaults write com.apple.DiskUtility advanced-image-options -bool true
-  # Load iTerm2 configuration from a predictable location.
-  defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.iterm2"
-  defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 }
 
 setup_homebrew() {
+  # Make sure we look at least in the default install location.
   if which brew > /dev/null 2>&1; then
     log "upgrading existing Homebrew packages"
     brew upgrade
-  elif which /bin/bash > /dev/null 2>&1; then
-    log "installing Homebrew"
-    case "$(uname -s)" in
-      Darwin)
-        homebrew="Homebrew/install/HEAD/install.sh"
-        ;;
-      Linux)
-        homebrew="Linuxbrew/install/HEAD/install.sh"
-        exit 1
-        ;;
-      *)
-        log "$OS not yet supported"
-        exit 1
-        ;;
-    esac
-    #ruby -e "$(curl -fsSL https://raw.githubusercontent.com/$homebrew)"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/$homebrew)"
   else
-    log "cannot install Homebrew (ruby not found)"
-    exit 1
+    log "installing Homebrew"
+    homebrew="Homebrew/install/HEAD/install.sh"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/$homebrew)"
   fi
-  log "installing bundled Homebrew packages"
-  brew bundle "--file=$(dirname "$0")/Brewfile" || true
-  brew cleanup
 }
-
 # Configures the postfix MTA as a GMail relay.
 #
 # The function asks to a test message to make sure the setup works as expected.
@@ -359,6 +339,11 @@ setup_gterm() {
   fi
 }
 
+setup_ranger() {
+  log "settings Ranger"
+  sudo ln -sf "$HOME/.dotfiles/ranger" "$HOME/.config"
+}
+
 setup_vscode() {
   log "setting VSCode"
   if command -v code > /dev/null; then
@@ -431,6 +416,11 @@ setup_hyper() {
   ln -sf "~/.dotfiles/hyper/.hyper.js" "~/.hyper.js"
 }
 
+setup_kitty() {
+  log "setting Kitty"
+  ln -sf "$HOME/.dotfiles/kitty" "$HOME/.config"
+}
+
 main() {
   if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
     usage
@@ -483,6 +473,12 @@ main() {
   fi
   if [ "$command" = "hyper" ] || [ -z "$command" ]; then
     setup_hyper
+  fi
+  if [ "$command" = "ranger" ] || [ -z "$command" ]; then
+    setup_ranger
+  fi
+  if [ "$command" = "kitty" ] || [ -z "$command" ]; then
+    setup_kitty
   fi
 }
 

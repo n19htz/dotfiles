@@ -29,6 +29,9 @@ if has("spell")
   set spellfile=~/.vim/spell/spellfile.add
 endif
 
+if !executable('tmux')
+  let g:loaded_vimux = 1
+endif
 " =============================================================================
 "                                   Styling
 " =============================================================================
@@ -142,7 +145,7 @@ nmap <Leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <Leader>= :call Preserve("normal gg=G")<CR>
 
 " Highlight text last pasted.
-nnoremap <expr> <Leader>p '`[' . strpart(getregtype(), 0, 1) . '`]'
+" nnoremap <expr> <Leader>p '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " Reverse letters in a word, e.g, "foo" -> "oof".
 vnoremap <silent> <Leader>r :<C-U>let old_reg_a=@a<CR>
@@ -216,6 +219,11 @@ Plug 'jparise/vim-graphql'
 
 call plug#end()
 
+let g:coc_node_path = trim(system('which node'))
+" https://github.com/neoclide/coc.nvim/issues/856
+"if $NVM_BIN != ""
+"  let g:coc_node_path = '$NVM_BIN/node'
+"endif
 " -- Lightline ---------------------------------------------------------------
 
 " Check :h lightline-problem-9 for font issues.
