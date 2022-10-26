@@ -21,6 +21,7 @@ usage() {
   echo "    hyper        setup Hyper terminal config"
   echo "    ranger       setup ranger file browser"
   echo "    kitty        setup kitty terminal"
+  echo "    fish         setup fish terminal"
   echo
   echo "without any arguments, all aspects will be setup (in the above order)"
   echo
@@ -421,6 +422,31 @@ setup_kitty() {
   ln -sf "$HOME/.dotfiles/kitty" "$HOME/.config"
 }
 
+setup_fish() {
+  fish=$(which fish 2> /dev/null)
+  if [ -z "$fish" ]; then
+    log "fish not found :-("
+  else
+    if grep -Fq "$fish" /etc/shells; then
+      log "skipping /etc/shells, $fish already there"
+    else
+      log "adding $fish to /etc/shells"
+      echo "$fish" | sudo tee -a /etc/shells > /dev/null
+    fi
+    log "setting fish as login shell"
+    login_shell="$(dscl . -read ~ UserShell | cut -f 2 -d " ")"
+    if [ "$login_shell" = "$fish" ]; then
+      log "$fish is already your login shell"
+    else
+      sudo chsh -s "$fish" "$USER"
+    fi
+    if which fisher 2> /dev/null; then
+      log "updating fish plugins via fisher"
+      fisher update
+    fi
+  fi
+}
+
 main() {
   if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
     usage
@@ -479,6 +505,9 @@ main() {
   fi
   if [ "$command" = "kitty" ] || [ -z "$command" ]; then
     setup_kitty
+  fi
+  if [ "$command" = "fish" ] || [ -z "$command" ]; then
+    setup_fish
   fi
 }
 
