@@ -63,7 +63,6 @@
 [gpg]
   format = ssh
 	program = gpg
-
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
