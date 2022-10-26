@@ -46,6 +46,9 @@
 [push]
   followTags = true
 
+[pull]
+  rebase = false
+
 [rerere]
 	enabled = true
 

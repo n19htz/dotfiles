@@ -318,6 +318,7 @@ alias .5='cd ../../../../..'
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
 alias path='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
+alias webstorm="open -na "WebStorm.app" --args "$@""
 
 # Mount
 alias mount='mount |column -t'

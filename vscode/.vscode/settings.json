@@ -76,7 +76,6 @@
   "editor.colorDecorators": true,
   "editor.dragAndDrop": false,
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
   "editor.glyphMargin": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [100],
@@ -286,7 +285,11 @@
   },
   "[markdown]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": false,
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
@@ -322,7 +325,7 @@
     "editor.defaultFormatter": null
   },
   "[scss]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.singleQuote": true,
   "prettier.printWidth": 100,
@@ -331,7 +334,7 @@
   "todo-tree.highlights.enabled": true,
   "explorer.compactFolders": false,
   "editor.linkedEditing": true,
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Default",
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.US",
   "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
@@ -353,9 +356,11 @@
     "Aldus",
     "alskdflaskjfd",
     "alskjdf",
+    "Announcekit",
     "asdfasdf",
     "asynciterable",
     "Authors",
+    "autobind",
     "autoclosed",
     "autosize",
     "bandmember",
@@ -425,9 +430,12 @@
     "focusring",
     "freshgreen",
     "fullname",
+    "GOST",
+    "GRNTI",
     "gulpfile",
     "hrefs",
     "httponly",
+    "IDENTIFICATOR",
     "Idents",
     "iframe",
     "imask",
@@ -441,6 +449,7 @@
     "jssand",
     "jsxdev",
     "jwtsecretstringofchars",
+    "keyvalue",
     "kubeconfig",
     "kubectl",
     "kubernetes",
@@ -455,6 +464,7 @@
     "Logining",
     "mapbox",
     "maxlength",
+    "memoizee",
     "metafile",
     "Metrica",
     "middlewares",
@@ -473,6 +483,7 @@
     "noninteractive",
     "noreferrer",
     "noscript",
+    "Numerize",
     "octicon",
     "ORCID",
     "outbase",
@@ -504,6 +515,7 @@
     "resizible",
     "respawn",
     "samp",
+    "scopus",
     "scrollable",
     "Scrollchor",
     "scroller",
@@ -522,6 +534,8 @@
     "skaffold",
     "sourcemappingurl",
     "spinner",
+    "sprintf",
+    "Srcs",
     "srsearch",
     "sslify",
     "storysource",
@@ -531,6 +545,7 @@
     "submenu",
     "subschemas",
     "svgr",
+    "sweed",
     "swipeable",
     "tabindex",
     "templating",
@@ -552,7 +567,9 @@
     "webpackbar",
     "wojtekmaj",
     "wordcount",
+    "workmins",
     "wrappable",
+    "xlink",
     "xvfb",
     "xxxl",
     "Библоид",
@@ -603,5 +620,16 @@
   "auto-close-tag.disableOnLanguage": [],
   "gitlens.blame.highlight.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
+  "editor.unicodeHighlight.allowedCharacters": {
+    "х": true
+  },
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
+  "bracketPairColorizer.depreciation-notice": false
 }
