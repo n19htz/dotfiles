@@ -53,13 +53,20 @@
 	enabled = true
 
 [user]
+  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDoRMmM58DFrIAa2WrIqBkp45RvRKJbtpAWvhs9eiqojGsd2w1hRxqqyOIYlrDOOX6eMnIKw21xkP97lgCj/BlKD9Fnw1W8nHfW2vR4d+dXycJSqyP2x6CYvdYYolHC/s4q2Glw97yqiZK0SvW4qoePcMtsv88Fpv88MBsrpGX67sY5dzGVCzv2AClxWqaGLZzwrUYFqwVFIMDcODRmydh5EJ6g15ck1LFjUSeSX9uSq/Hop45hqLyXMo+fp72L3P7yPmZ/fvr5F+o4gdeVwgAQKcQVqNyX/GsPpLwbmgNTL2rs+hAR/dZdMJf9gMjxBVMzmJRYCG5WhbnFLV9rXbwu89ePqTMIa2MykLAozGLgz4f4LUEyjDBl6CF4K0vANesqo2rI9bZUZR7vRIcYyaXWYtHopFCJO4qyyRM+eMaGnVq05GRVU9XL0h8MkabSlpqW8z5lNxuvlLHlPX7wcFjWJltKtLEJgc8nV7Ka6g2VPRz6zZ14kYwaHQDrvsF+T5dZqupiV1RViC0fvw1Tz0tbe8Oi2luLHDAt89/Aj30WxtxxeANiPb71mgakpwpDewanjiDvKkwccWvaDGrxd+MWfKSMTvkBcH1pTy7vmZDjkRi+H80kuhSFPoXnh5UiTDXygrj2wC6p1lRdu68QeOfqFJpThwrEwCEnpUM1bbj7wQ==
 	name = Pavel L.
 	email = n19ht3r@gmail.com
-	signingkey = A9F09F4D9CC3D2FE
+
 [commit]
-	gpgsign = true
+	gpgSign = true
+
 [gpg]
+  format = ssh
 	program = gpg
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
 [core]
 	excludesfile = /Users/n19htz/.gitignore_global
 	trustExitCode = true
