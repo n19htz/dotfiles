@@ -1,7 +1,6 @@
 #
 # zpath - Sets PATH related variables.
 #
-
 # Automatically remove duplicates from these arrays.
 typeset -U path cdpath fpath manpath
 
@@ -18,6 +17,7 @@ path=(
   /usr/ucb            # SunOS
   /usr/sww/bin        # SunOS
   /opt/metasploit-framework/bin
+  /opt/homebrew/bin:$PATH
   ~/.composer/vendor/bin
 )
 

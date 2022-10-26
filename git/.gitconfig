@@ -28,14 +28,16 @@
 
 [diff]
   tool = icdiff
+	submodule = log
 
 [difftool]
   prompt = false
 
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 
 [merge]
 	tool = vimdiff
@@ -44,12 +46,26 @@
   followTags = true
 
 [user]
-	signingKey = BD359B3E3FB44A1C
+	signingkey = B8335DEC
 	name = Pavel L.
 	email = n19ht3r@gmail.com
+[includeIf "gitdir:~/Projects/walli/"]
+  path = ~/Projects/walli/.gitconfig
+[includeIf "gitdir:~/Projects/wildberries/"]
+  path = ~/Projects/wildberries/.gitconfig
 [commit]
 	gpgSign = true
 [gpg]
 	program = gpg
 [core]
-	excludesfile = ~/.config/git/ignore
+	excludesfile = /Users/n19htz/.gitignore_global
+	autocrlf = input
+[init]
+	defaultBranch = master
+[pull]
+	rebase = false
+[hub]
+	protocol = ssh
+
+[tag]
+	gpgSign = true
