@@ -70,7 +70,6 @@ tags
 node_modules/
 jspm_packages/
 .npm
-.env
 .env.dev
 .evn.test
 bower_components
@@ -86,8 +85,6 @@ yarn-error.log*
 .next
 
 # -- IDE -----------------------------------------------------------------------
-.vscode/
-.idea
 .project
 .classpath
 .c9/

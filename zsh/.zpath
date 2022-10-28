@@ -17,7 +17,8 @@ path=(
   /usr/ucb            # SunOS
   /usr/sww/bin        # SunOS
   /opt/metasploit-framework/bin
-  /opt/homebrew/bin:$PATH
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
   ~/.composer/vendor/bin
 )
 

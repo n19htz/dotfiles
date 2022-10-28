@@ -67,15 +67,18 @@
   path = ~/Projects/wildberries/.gitconfig
 
 [core]
-	excludesfile = /Users/n19htz/.gitignore_global
+	excludesFile = ~/.config/git/ignore
 	autocrlf = input
 
 [init]
 	defaultBranch = master
 
 [pull]
-	rebase = false
+	rebase = true
 
 [hub]
 	protocol = ssh
+
+[rerere]
+	enabled = true
 
