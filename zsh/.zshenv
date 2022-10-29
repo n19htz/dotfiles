@@ -40,10 +40,13 @@ if [[ $UID != 0 ]]; then
   export GPG_TTY=$(tty);
   if which gpgconf > /dev/null 2>&1; then
     export GPG_AGENT_INFO=$(gpgconf --list-dirs agent-socket)
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+ #   export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     gpg-connect-agent updatestartuptty /bye > /dev/null
   fi
 fi
+
+# 1Password SSH
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 # OS-specific environment.
 case $OSTYPE in

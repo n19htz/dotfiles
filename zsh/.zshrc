@@ -252,7 +252,7 @@ setopt extended_glob
 alias sleepOff="sudo pmset -a disablesleep 1"
 alias sleepOn="sudo pmset dusablesleep 0"
 alias dk_clear="docker system prune && kubectl delete deployment --all"
-alias ssh="kitty +kitten ssh"
+alias s="kitty +kitten ssh"
 function xcode {
 
   proj=$(ls -d *.xcodeproj/ 2>/dev/null)
