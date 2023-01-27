@@ -29,6 +29,10 @@ if has("spell")
   set spellfile=~/.vim/spell/spellfile.add
 endif
 
+if !executable('tmux')
+  let g:loaded_vimux = 1
+endif
+
 " =============================================================================
 "                                   Styling
 " =============================================================================
@@ -161,9 +165,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'benmills/vimux'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'dhruvasagar/vim-zoom'
-Plug 'edkolev/tmuxline.vim'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
@@ -303,21 +305,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions.
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-" -- Tmuxline ----------------------------------------------------------------
-
-let g:tmuxline_theme = 'lightline'
-" We use :TmuxlineSnapshot to generate .tmux/tmuxline-(light|dark).conf.
-" Thereafter, we need to do a bit of patching to improve the integration of
-" tmxu-mem-cpu-load. (https://github.com/edkolev/tmuxline.vim/issues/78)
-let g:tmuxline_preset = {
-  \'a'       : '#S',
-  \'x'       : 'ï³ %Y-%m-%d ï %H:%M',
-  \'y'       : '#(tmux-mem-cpu-load -q -g 5 -m 2 -i 2)',
-  \'z'       : 'ï #h',
-  \'win'     : ['#I', '#W'],
-  \'cwin'    : ['#I', '#W'],
-  \'options' : {'status-justify' : 'left'}}
-
 " -- colors ------------------------------------------------------------------
 
 "if has("termguicolors")
@@ -327,15 +314,6 @@ let g:tmuxline_preset = {
 colorscheme gruvbox
 "colorscheme codedark
 "colorscheme monokai
-
-" -- Tmux Navigator ----------------------------------------------------------
-
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
-nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
 " -- Vimux -------------------------------------------------------------------
 
