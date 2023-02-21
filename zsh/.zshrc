@@ -250,7 +250,7 @@ setopt extended_glob
 # =============================================================================
 # Function to open Xcode projects from the command line, call with $ xcode
 alias sleepOff="sudo pmset -a disablesleep 1"
-alias sleepOn="sudo pmset dusablesleep 0"
+alias sleepOn="sudo pmset disablesleep 0"
 alias dk_clear="docker system prune && kubectl delete deployment --all"
 alias s="kitty +kitten ssh"
 function xcode {

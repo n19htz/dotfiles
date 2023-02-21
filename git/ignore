@@ -77,7 +77,6 @@ coverage
 lib-cov
 tmp
 .credentials
-logs
 *.log
 npm-debug.log*
 yarn-debug.log*

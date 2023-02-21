@@ -338,7 +338,7 @@
   "vim.easymotion": true,
   "vim.highlightedyank.enable": true,
   "vim.replaceWithRegister": true,
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "terminal.integrated.allowChords": false,
   "go.useLanguageServer": true,
   "go.lintTool": "golangci-lint",
