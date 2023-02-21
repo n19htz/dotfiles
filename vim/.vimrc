@@ -171,9 +171,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'benmills/vimux'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'dhruvasagar/vim-zoom'
-Plug 'edkolev/tmuxline.vim'
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
@@ -182,7 +180,6 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'mephux/bro.vim'
 Plug 'mhinz/vim-signify'
 Plug 'morhetz/gruvbox'
-Plug 'rhysd/vim-clang-format'
 Plug 'rstacruz/sparkup'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'

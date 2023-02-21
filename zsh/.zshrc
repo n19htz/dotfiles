@@ -393,22 +393,6 @@ alias mtr='sudo mtr'
 #make dir and navigate to it
 mkcd() { mkdir -p $1; cd $1 }
 
-#vagrant
-function homestead() {
-    ( cd /Volumes/Data\ HD/Virtual\ Machines/Homestead && vagrant $* )
-}
-function kali() {
-    ( cd /Volumes/Data\ HD/Virtual\ Machines/vagrant/boxes/offensive-security-VAGRANTSLASH-kali-linux/2018.3.1/virtualbox && vagrant $* )
-}
-
-function gulpinit() {
-    ( wget https://github.com/n19htz/gulp4/archive/master.zip && extract master.zip && mv gulp4-master/bootstrap.sh . && rm -rf master.zip gulp4-master && chmod +x bootstrap.sh && ./bootstrap.sh && rm -rf bootstrap.sh .DS_Store )
-}
-
-function webpackinit() {
-    ( wget https://github.com/n19htz/webpack/archive/master.zip && extract master.zip && mv webpack-master/* . && rm -rf master.zip webpack-master )
-}
-
 # create .tar.gz
 targz() { tar -zcvf $1.tar.gz $1; rm -rf $1; }
 # extra .tar.gz
