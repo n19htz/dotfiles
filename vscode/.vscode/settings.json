@@ -627,5 +627,6 @@
   "less.validate": false,
   "scss.validate": false,
   "stylelint.validate": ["css", "less", "postcss", "scss"],
-  "bracketPairColorizer.depreciation-notice": false
+  "bracketPairColorizer.depreciation-notice": false,
+  "editor.fontSize": 13
 }
