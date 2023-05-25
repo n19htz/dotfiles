@@ -19,6 +19,7 @@ usage() {
   echo "    gterm        setup Gruvbox theme for Gnome terminal"
   echo "    vscode       setup Vscode"
   echo "    hyper        setup Hyper terminal config"
+  echo "    kitty        setup kitty terminal"
   echo
   echo "without any arguments, all aspects will be setup (in the above order)"
   echo
@@ -449,6 +450,11 @@ setup_hyper() {
   ln -sf "~/.dotfiles/hyper/.hyper.js" "~/.hyper.js"
 }
 
+setup_kitty() {
+  log "setting Kitty"
+  ln -sf "$HOME/.dotfiles/kitty" "$HOME/.config"
+}
+
 main() {
   if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
     usage
@@ -505,6 +511,9 @@ main() {
   fi
   if [ "$command" = "hyper" ] || [ -z "$command" ]; then
     setup_hyper
+  fi
+  if [ "$command" = "kitty" ] || [ -z "$command" ]; then
+    setup_kitty
   fi
 }
 
