@@ -150,7 +150,6 @@ zplug 'b4b4r07/zsh-vimode-visual', defer:3
 #zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 #zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:"fzf", frozen:1
 zplug "junegunn/fzf", use:"shell/key-bindings.zsh"
-zplug 'knu/zsh-manydots-magic', use:manydots-magic, defer:3
 zplug 'romkatv/powerlevel10k', use:powerlevel10k.zsh-theme
 zplug 'seebi/dircolors-solarized', ignore:"*", as:plugin
 zplug 'Tarrasch/zsh-bd'

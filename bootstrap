@@ -158,35 +158,6 @@ setup_macos() {
   defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false
   # Do not warn before emptying the trash.
   defaults write com.apple.finder WarnOnEmptyTrash -bool false
-  # -- Safari -----------------------------------------------------------------
-  # Privacy: don’t send search queries to Apple.
-  defaults write com.apple.Safari UniversalSearchEnabled -bool false
-  defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-  # Warn about fraudulent websites.
-  defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
-  # Block pop-up windows.
-  defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
-  defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
-  # Enable Do Not Track.
-  defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
-  # Update extensions automatically.
-  defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
-  # Disable AutoFill.
-  defaults write com.apple.Safari AutoFillFromAddressBook -bool false
-  defaults write com.apple.Safari AutoFillPasswords -bool false
-  defaults write com.apple.Safari AutoFillCreditCardData -bool false
-  defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
-  # Show the full URL in the address bar (note: this still hides the scheme).
-  defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
-  # Prevent Safari from opening ‘safe’ files automatically after downloading.
-  defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
-  # Hide bookmark bar.
-  defaults write com.apple.Safari ShowFavoritesBar -bool false
-  # Set up for development.
-  defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-  defaults write com.apple.Safari IncludeDevelopMenu -bool true
-  defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-  defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
   # Add a context menu item for showing the Web Inspector in web views.
   defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
   # -- Tools ------------------------------------------------------------------

@@ -66,10 +66,9 @@
     "extensions": [".js", ".ts", "html"]
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.tslint": true,
-    "source.fixAll.stylelint": true
-    // "source.fixAll.prettier": true
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.tslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   "editor.accessibilitySupport": "off",
   "editor.codeLens": true,
@@ -129,7 +128,7 @@
   "editor.renderWhitespace": "all",
   "editor.renderControlCharacters": true,
   "editor.suggestSelection": "first",
-  "editor.wordBasedSuggestions": false,
+  "editor.wordBasedSuggestions": "off",
   // explorer
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -178,8 +177,6 @@
   // window
   "window.clickThroughInactive": false,
   "window.newWindowDimensions": "maximized",
-  // workbench / terminal styles
-  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
     "gitDecoration.modifiedResourceForeground": "#d4cb68",
     "terminal.background": "#272727",
