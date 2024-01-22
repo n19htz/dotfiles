@@ -34,8 +34,8 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}╭─"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}╰─➤ "
 POWERLEVEL9K_STATUS_OK=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir_joined
-                                   dir_writable_joined nvm)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time virtualenv vcs
+                                   dir_writable_joined node_version java_version virtualenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time vcs
                                     background_jobs_joined time_joined
                                     user_joined os_icon_joined host_joined)
 POWERLEVEL9K_VIRTUALENV_BACKGROUND="clear"
@@ -44,6 +44,8 @@ POWERLEVEL9K_NODE_VERSION_BACKGROUND="clear"
 POWERLEVEL9K_NODE_VERSION_FOREGROUND="green"
 POWERLEVEL9K_NVM_BACKGROUND="clear"
 POWERLEVEL9K_NVM_FOREGROUND="green"
+POWERLEVEL9K_JAVA_VERSION_BACKGROUND="clear"
+POWERLEVEL9K_JAVA_VERSION_FOREGROUND="red"
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND="clear"
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND="green"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="clear"
@@ -550,8 +552,6 @@ update() {
   brew upgrade
   brew upgrade --cask --greedy
   brew cleanup
-  nvm install node --latest-npm --reinstall-packages-from=node 
-  nvm use node
   npm install npm -g
   npm update -g
   # Shell plugin management
