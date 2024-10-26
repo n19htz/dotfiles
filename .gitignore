@@ -6,3 +6,4 @@ mutt/.mutt/mailboxes
 mutt/.mutt/lists
 tmux/.tmux/plugins
 .DS_Store
+.idea
