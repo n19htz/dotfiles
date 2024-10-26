@@ -205,7 +205,6 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'crusoexia/vim-monokai'
 Plug 'tpope/vim-fireplace'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'

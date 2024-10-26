@@ -148,9 +148,7 @@ zplug 'b4b4r07/zsh-vimode-visual', defer:3
 # ofr now. See https://github.com/bhilburn/powerlevel9k/pull/703 for details.
 #zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme, at:next
 #zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:"fzf", frozen:1
 zplug "junegunn/fzf", use:"shell/key-bindings.zsh"
-zplug 'knu/zsh-manydots-magic', use:manydots-magic, defer:3
 zplug 'romkatv/powerlevel10k', use:powerlevel10k.zsh-theme
 zplug 'seebi/dircolors-solarized', ignore:"*", as:plugin
 zplug 'Tarrasch/zsh-bd'
@@ -331,12 +329,7 @@ alias gd='git diff'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 
-alias cat='bat'
-
-alias vihosts="vim /usr/local/etc/httpd/extra/httpd-vhosts.conf"
 alias downloads="cd ~/Downloads"
-alias projects="cd /Volumes/Data\ HD/Projects"
-alias datahd="cd /Volumes/Data\ HD/"
 
 ## a quick way to get out of current directory ##
 alias cd/='cd /'
@@ -348,8 +341,6 @@ alias .....='cd ../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
-# VLC
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC -I rc'
 alias path='echo -e ${PATH//:/\\n}'
 
 # Mount
@@ -387,64 +378,9 @@ alias meminfo='free -m -l -t'
 
 alias reload='source ~/.zshrc'
 alias zshrc='vim ~/.zshrc'
-alias mtr='sudo mtr'
-
-#Apache
-alias apachestart='sudo apachectl start'
-alias apachestop='sudo apachectl stop'
-alias apacherestart='sudo apachectl -k restart'
-
-#HTTPD
-alias findhttpd='ps -aef | grep httpd'
-alias httpdstart='brew services start httpd'
-alias httpdstop='brew services stop httpd'
-alias httpdrestart='brew services restart httpd'
-
-#MYSQL
-alias mysqlstart='brew services start mariadb'
-alias mysqlrestart='brew services restart mariadb'
-alias mysqlstop='brew services stop mariadb'
-
-#PGSQL
-alias pgstart='brew services start postgresql'
-alias pgrestart='brew services restart postgresql'
-alias pgstop='brew services stop postgresql'
-
-#REDIS
-alias redisstart='brew services start redis'
-alias redisrestart='brew services restart redis'
-alias redisstop='brew services stop redis'
-
-#CHUNKWM
-alias chunkwmstart='brew services start chunkwm'
-alias chunkwmrestart='brew services restart chunkwm'
-alias chunkwmstop='brew services stop chunkwm'
-
-# Web restart
-alias webstart='brew services start httpd && sphp 7.4  && sudo brew services start dnsmasq && brew services start mariadb && brew services start proftpd'
-
-alias webrestart='brew services restart httpd && sphp 7.4 && sudo brew services restart dnsmasq && brew services restart mariadb && brew services restart proftpd'
-
-alias webstop='brew services stop httpd && sudo brew services stop dnsmasq && brew services stop mariadb && brew services stop proftpd'
 
 #make dir and navigate to it
 mkcd() { mkdir -p $1; cd $1 }
-
-#vagrant
-function homestead() {
-    ( cd /Volumes/Data\ HD/Virtual\ Machines/Homestead && vagrant $* )
-}
-function kali() {
-    ( cd /Volumes/Data\ HD/Virtual\ Machines/vagrant/boxes/offensive-security-VAGRANTSLASH-kali-linux/2018.3.1/virtualbox && vagrant $* )
-}
-
-function gulpinit() {
-    ( wget https://github.com/n19htz/gulp4/archive/master.zip && extract master.zip && mv gulp4-master/bootstrap.sh . && rm -rf master.zip gulp4-master && chmod +x bootstrap.sh && ./bootstrap.sh && rm -rf bootstrap.sh .DS_Store )
-}
-
-function webpackinit() {
-    ( wget https://github.com/n19htz/webpack/archive/master.zip && extract master.zip && mv webpack-master/* . && rm -rf master.zip webpack-master )
-}
 
 # create .tar.gz
 targz() { tar -zcvf $1.tar.gz $1; rm -rf $1; }
@@ -481,25 +417,6 @@ extract () {
    else
        echo "'$1' is not a valid file!"
    fi
-}
-
-jcurl() {
-  curl "$@" | json | pygmentize -l json
-}
-
-xcurl() {
-  curl "$@" | xml_pp | pygmentize -l xml
-}
-
-auth-jcurl() {
-    curl -H "Accept: application/json" -H "Content-Type: application/json" -H "X-User-Email: $1" -H "X-User-Token: $2" ${@:3} | json | pygmentize -l json
-}
-
-cdf () {
-  # cd into whatever is the forefront Finder window.
-  local path=$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')
-  echo "$path"
-  cd "$path"
 }
 
 # =============================================================================
@@ -599,25 +516,8 @@ update() {
       kill -0 "$$" || exit
     done 2>/dev/null &
   fi
-  # Homebrew
-  brew update	
-  brew upgrade
-  brew upgrade --cask --greedy
-  brew cleanup
-  gem update --system
-  gem update
-  gem cleanup
-  nvm install node --latest-npm --reinstall-packages-from=node 
-  nvm use node
-  npm install npm -g
-  npm update -g
   # Shell plugin management
   zplug update
   .tmux/plugins/tpm/bin/update_plugins all
   vim +PlugUpgrade +PlugUpdate +PlugCLean! +qa
 }
-
-
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
