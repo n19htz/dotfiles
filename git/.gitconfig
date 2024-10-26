@@ -66,6 +66,9 @@
 [includeIf "gitdir:~/Projects/wildberries/"]
   path = ~/Projects/wildberries/.gitconfig
 
+[includeIf "gitdir:~/Projects/wildberries/gitlab.wildberries.ru/"]
+  path = ~/Projects/wildberries/gitlab.wildberries.ru/.gitconfig
+
 [core]
 	excludesFile = ~/.config/git/ignore
 	autocrlf = input

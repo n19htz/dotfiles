@@ -164,7 +164,6 @@
   // telemetry
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "terminal.integrated.enableBell": false,
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.experimentalLinkProvider": false,
   "terminal.integrated.rendererType": "auto",
@@ -221,8 +220,6 @@
   "javascript.suggestionActions.enabled": false,
   "javascript.validate.enable": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
-  "javascript.suggest.autoImports": false,
-  "typescript.suggest.autoImports": false,
   "typescript.validate.enable": true,
   // html
   "html-css-class-completion.enableEmmetSupport": true,
@@ -473,6 +470,7 @@
     "nats",
     "nestjs",
     "ngrx",
+    "Nilable",
     "noninteractive",
     "noreferrer",
     "noscript",
@@ -550,6 +548,8 @@
     "typecheck",
     "typedefs",
     "unlisten",
+    "Unlistener",
+    "unlisteners",
     "Unprocessable",
     "userns",
     "very",
@@ -625,5 +625,12 @@
   "scss.validate": false,
   "stylelint.validate": ["css", "less", "postcss", "scss"],
   "bracketPairColorizer.depreciation-notice": false,
-  "editor.fontSize": 13
+  "editor.fontSize": 13,
+  "security.workspace.trust.untrustedFiles": "open",
+  "kotlin.compiler.jvm.target": "2.0",
+  "kotlin.java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home",
+  "accessibility.signals.terminalBell": {
+    "sound": "off"
+  },
+  "terminal.integrated.enableVisualBell": false
 }

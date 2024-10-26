@@ -34,18 +34,20 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}╭─"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}╰─➤ "
 POWERLEVEL9K_STATUS_OK=false
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir_joined
-                                   dir_writable_joined node_version java_version virtualenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time vcs
+                                   dir_writable_joined node_version java_version go_version virtualenv)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time virtualenv vcs
                                     background_jobs_joined time_joined
                                     user_joined os_icon_joined host_joined)
 POWERLEVEL9K_VIRTUALENV_BACKGROUND="clear"
 POWERLEVEL9K_VIRTUALENV_FOREGROUND="yellow"
 POWERLEVEL9K_NODE_VERSION_BACKGROUND="clear"
 POWERLEVEL9K_NODE_VERSION_FOREGROUND="green"
-POWERLEVEL9K_NVM_BACKGROUND="clear"
-POWERLEVEL9K_NVM_FOREGROUND="green"
+POWERLEVEL9K_GO_VERSION_BACKGROUND="clear"
+POWERLEVEL9K_GO_VERSION_FOREGROUND="blue"
 POWERLEVEL9K_JAVA_VERSION_BACKGROUND="clear"
 POWERLEVEL9K_JAVA_VERSION_FOREGROUND="red"
+POWERLEVEL9K_NVM_BACKGROUND="clear"
+POWERLEVEL9K_NVM_FOREGROUND="green"
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND="clear"
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND="green"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="clear"
@@ -152,6 +154,7 @@ zplug 'b4b4r07/zsh-vimode-visual', defer:3
 #zplug 'bhilburn/powerlevel9k', use:powerlevel9k.zsh-theme
 #zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:"fzf", frozen:1
 zplug "junegunn/fzf", use:"shell/key-bindings.zsh"
+#zplug 'knu/zsh-manydots-magic', use:manydots-magic, defer:2
 zplug 'romkatv/powerlevel10k', use:powerlevel10k.zsh-theme
 zplug 'seebi/dircolors-solarized', ignore:"*", as:plugin
 zplug 'Tarrasch/zsh-bd'
@@ -552,6 +555,10 @@ update() {
   brew upgrade
   brew upgrade --cask --greedy
   brew cleanup
+  #nvm install node --latest-npm --reinstall-packages-from=node
+  #nvm use node
+  fnm install --lts
+  fnm install --latest
   npm install npm -g
   npm update -g
   # Shell plugin management

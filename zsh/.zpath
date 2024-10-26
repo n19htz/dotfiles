@@ -7,6 +7,8 @@ typeset -U path cdpath fpath manpath
 # System $PATH.
 path=(
   ~/.local/bin
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
   /usr/local/bin
   /usr/bin
   /bin
@@ -17,8 +19,6 @@ path=(
   /usr/ucb            # SunOS
   /usr/sww/bin        # SunOS
   /opt/metasploit-framework/bin
-  /opt/homebrew/bin
-  /opt/homebrew/sbin
   ~/.composer/vendor/bin
 )
 

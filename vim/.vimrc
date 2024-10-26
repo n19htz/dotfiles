@@ -432,6 +432,7 @@ autocmd BufRead,BufNewFile *.pac2     set filetype=ruby
 autocmd BufRead,BufNewFile *.ll       set filetype=llvm
 autocmd BufRead,BufNewFile *.kramdown set filetype=markdown
 autocmd BufRead,BufNewFile Portfile   set filetype=tcl
+autocmd BufRead,BufNewFile *.local    set filetype=sh
 
 " Respect (Br|D)oxygen comments.
 autocmd FileType c,cpp set comments-=://
