@@ -613,7 +613,7 @@
   "auto-close-tag.disableOnLanguage": [],
   "gitlens.blame.highlight.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.enabled": false,
+"gitlens.codeLens.enabled": false,
   "editor.unicodeHighlight.allowedCharacters": {
     "х": true
   },
